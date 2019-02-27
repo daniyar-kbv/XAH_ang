@@ -1,0 +1,36 @@
+.main-container {
+	padding: 50px 100px;
+}
+
+.post {
+	height: 254px;
+}
+
+#post-img {
+	float: left;
+}
+
+img {
+	height: 250px;
+	width: 350px;
+	padding-right: 30px;
+}
+
+.post-text {
+	height: 100px;
+}
+
+.read-more {
+	position: relative;
+	display: flex;
+    align-items: flex-end;
+    float: right;
+    text-decoration: underline;
+}
+
+#line {
+	background-color: gray;
+	width: 80%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
