@@ -58,7 +58,7 @@
         height: 16.666666%
     }
     img.ad{
-        height: 150px !important;
+        height: 100% !important;
         object-fit: contain;
     }
 }

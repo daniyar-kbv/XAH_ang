@@ -3,17 +3,21 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "XAH": {
+    "wingman-ng": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/XAH",
+            "outputPath": "dist/wingman-ng",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,9 +27,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/prismjs/prism.js",
+              "node_modules/scrollmonitor/scrollMonitor.js",
+              "node_modules/smartwizard/dist/js/jquery.smartWizard.min.js",
+              "node_modules/smooth-scroll/dist/smooth-scroll.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -58,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "XAH:build"
+            "browserTarget": "wingman-ng:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "XAH:build:production"
+              "browserTarget": "wingman-ng:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "XAH:build"
+            "browserTarget": "wingman-ng:build"
           }
         },
         "test": {
@@ -80,7 +91,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -103,7 +114,7 @@
         }
       }
     },
-    "XAH-e2e": {
+    "wingman-ng-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +123,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "XAH:serve"
+            "devServerTarget": "wingman-ng:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "XAH:serve:production"
+              "devServerTarget": "wingman-ng:serve:production"
             }
           }
         },
@@ -132,5 +143,5 @@
       }
     }
   },
-  "defaultProject": "XAH"
+  "defaultProject": "wingman-ng"
 }
