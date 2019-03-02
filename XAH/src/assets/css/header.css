@@ -1,0 +1,27 @@
+.jumbotron {
+    margin-top: -40px;
+    margin-bottom: 0px;
+    background-color: #212429;
+}
+.xan-holder {
+    padding-top: 60px;
+}
+.social {
+    margin-right: 108px;
+    float: right;
+}
+.social_icon {
+    margin-left: 8px;
+    color: white;
+}
+.h3_big {
+    color: white;
+    font-size: 20px;
+    text-align: right;
+}
+.h1_big {
+    color: white;
+    font-size: 88px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-style: bold;
+}
