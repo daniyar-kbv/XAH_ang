@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { PostComponent } from './post/post.component';
 import { CategoryComponent } from './category/category.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -17,6 +18,7 @@ import { CategoryComponent } from './category/category.component';
     CategoryComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     AppRoutingModule
   ],
