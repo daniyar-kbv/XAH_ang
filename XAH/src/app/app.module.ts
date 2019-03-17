@@ -8,6 +8,7 @@ import { PostComponent } from './post/post.component';
 import { CategoryComponent } from './category/category.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 
@@ -17,7 +18,8 @@ import { LoginComponent } from './login/login.component';
     MainComponent,
     PostComponent,
     CategoryComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     NgbModule,
