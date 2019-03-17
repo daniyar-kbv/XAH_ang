@@ -1,10 +1,12 @@
 <div class="container">
-    <div class="row mt-5 ml-1 mr-1 mb-5" id="hot-news">
-        <div class="col-6 col-sm-6 col-lg-6 shadow-box-big p-0 image-in" style="background-image: url(../assets/images/magazines.jpg)">
+    <div class="row mt-5 ml-1 mr-1" id="hot-news">
+        <div [routerLink] = "'/post'" class="col-6 col-sm-6 col-lg-6 shadow-box-big p-0 image-in" style="background-image: url(../assets/images/magazines.jpg)">
             <div class="d-flex align-content-between flex-wrap h-100">
                 <div class="ml-auto d-flex cat-box">
                     <div class="bg-dark w-100">
-                        <p class="mt-2 text-center cat-text">Auto</p>
+                        <p class="mt-2 mb-2 text-center cat-text">
+                            <a>Авто</a>
+                        </p>
                     </div>
                 </div>
                 <div class="mt-auto p-2 bd-highlight">
@@ -17,7 +19,7 @@
                 <div class="d-flex align-content-between flex-wrap h-100">
                     <div class="ml-auto d-flex cat-box">
                         <div class="bg-dark w-100">
-                            <p class="mt-2 text-center cat-text">Auto</p>
+                            <p class="mt-2 mb-2 text-center cat-text">Авто</p>
                         </div>
                     </div>
                     <div class="mt-auto p-2 bd-highlight">
@@ -30,7 +32,7 @@
                 <div class="d-flex align-content-between flex-wrap h-100">
                     <div class="ml-auto d-flex cat-box">
                         <div class="bg-dark w-100">
-                            <p class="mt-2 text-center cat-text">Auto</p>
+                            <p class="mt-2 mb-2 text-center cat-text">Авто</p>
                         </div>
                     </div>
                     <div class="mt-auto p-2 bd-highlight">
@@ -47,7 +49,7 @@
                     <div class="d-flex align-content-between flex-wrap h-100">
                         <div class="mr-auto d-flex cat-box">
                             <div class="bg-dark w-100">
-                                <p class="mt-2 text-center cat-text">Auto</p>
+                                <p class="mt-2 mb-2 text-center cat-text">Авто</p>
                             </div>
                         </div>
                         <div class="mt-auto p-2 bd-highlight">
@@ -81,7 +83,7 @@
                     <div class="d-flex align-content-between flex-wrap h-100">
                         <div class="mr-auto d-flex cat-box">
                             <div class="bg-dark w-100">
-                                <p class="mt-2 text-center cat-text">Auto</p>
+                                <p class="mt-2 mb-2 text-center cat-text">Авто</p>
                             </div>
                         </div>
                         <div class="mt-auto p-2 bd-highlight">
@@ -115,7 +117,7 @@
                     <div class="d-flex align-content-between flex-wrap h-100">
                         <div class="mr-auto d-flex cat-box">
                             <div class="bg-dark w-100">
-                                <p class="mt-2 text-center cat-text">Auto</p>
+                                <p class="mt-2 mb-2 text-center cat-text">Авто</p>
                             </div>
                         </div>
                         <div class="mt-auto p-2 bd-highlight">
@@ -149,13 +151,13 @@
             <div class="row">
                 <div class="card col-7 col-lg-12">
                     <div class="card-body">
-                        <h6>Never miss an update ✌</h6>
+                        <h6>Не пропусти ниодну новость</h6>
                         <form>
                             <div class="form-group mb-2">
-                                <input type="email" placeholder="Email Address" name="subscribeEmail" class="form-control" />
-                                <small>No spam, we promise.</small>
+                                <input type="email" placeholder="Email" name="subscribeEmail" class="form-control" />
+                                <small>Без спама</small>
                             </div>
-                            <button type="submit" class="btn btn-block btn-primary">Subscribe</button>
+                            <button type="submit" class="btn btn-block btn-primary">Подписаться</button>
                         </form>
                     </div>
                 </div>
@@ -166,9 +168,9 @@
             <div class="card mt-5">
                 <div class="card-header d-flex justify-content-between">
                     <div>
-                        <span class="h6">Related Groups</span>
+                        <span class="h6">Авторы</span>
                     </div>
-                    <a href="#">View all &rsaquo;</a>
+                    <a href="#">Смотреть все &rsaquo;</a>
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled list-spacing-sm">
@@ -176,13 +178,13 @@
                         <li>
                             <div class="media">
                                 <a href="#">
-                                    <img alt="Image" src="assets/img/graphic-product-bench-thumb.jpg" class="avatar avatar-square rounded mr-3" />
+                                    <img alt="Image" src="assets/img/avatar-male-1.jpg" class="avatar avatar-square rounded mr-3" />
                                 </a>
                                 <div class="media-body">
                                     <a href="#">
-                                        <span class="h6">Bench</span>
+                                        <span class="h6">Азамат Акшабаев</span>
                                     </a>
-                                    <span class="badge badge-secondary">Productivity</span>
+                                    <span class="badge badge-secondary">Авто</span>
                                     <div class="text-muted">
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
@@ -200,13 +202,13 @@
                         <li>
                             <div class="media">
                                 <a href="#">
-                                    <img alt="Image" src="assets/img/graphic-product-kin-thumb.jpg" class="avatar avatar-square rounded mr-3" />
+                                    <img alt="Image" src="assets/img/avatar-female-1.jpg" class="avatar avatar-square rounded mr-3" />
                                 </a>
                                 <div class="media-body">
                                     <a href="#">
-                                        <span class="h6">Kin</span>
+                                        <span class="h6">Алина Чен</span>
                                     </a>
-                                    <span class="badge badge-secondary">Lifestyle</span>
+                                    <span class="badge badge-secondary">Спорт</span>
                                     <div class="text-muted">
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
@@ -224,13 +226,13 @@
                         <li>
                             <div class="media">
                                 <a href="#">
-                                    <img alt="Image" src="assets/img/graphic-product-paydar-thumb.jpg" class="avatar avatar-square rounded mr-3" />
+                                    <img alt="Image" src="assets/img/avatar-male-2.jpg" class="avatar avatar-square rounded mr-3" />
                                 </a>
                                 <div class="media-body">
                                     <a href="#">
-                                        <span class="h6">Paydar</span>
+                                        <span class="h6">Гани Гамидов</span>
                                     </a>
-                                    <span class="badge badge-secondary">Productivity</span>
+                                    <span class="badge badge-secondary">Бизнес</span>
                                     <div class="text-muted">
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
@@ -248,20 +250,20 @@
                         <li>
                             <div class="media">
                                 <a href="#">
-                                    <img alt="Image" src="assets/img/graphic-product-pipeline-thumb.jpg" class="avatar avatar-square rounded mr-3" />
+                                    <img alt="Image" src="assets/img/avatar-female-kulya.JPG" class="avatar avatar-square rounded mr-3" />
                                 </a>
                                 <div class="media-body">
                                     <a href="#">
-                                        <span class="h6">pipeline.js</span>
+                                        <span class="h6">Куляш Конырова</span>
                                     </a>
-                                    <span class="badge badge-secondary">Development</span>
+                                    <span class="badge badge-secondary">Спорт</span>
                                     <div class="text-muted">
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
-                                                <small><i class="icon-heart"></i> 84</small>
+                                                <small><i class="icon-heart"></i> 657</small>
                                             </li>
                                             <li class="list-inline-item">
-                                                <small><i class="icon-message"></i> 25</small>
+                                                <small><i class="icon-message"></i>165</small>
                                             </li>
                                         </ul>
                                     </div>
@@ -276,16 +278,16 @@
             </div>
         </div>
     </div>
-    <div class="m-1 mt-5">
+    <div class="m-1 mt-5 mb-5">
         <ul class="row feature-list feature-list-sm">
             <li class="col-12 col-md-6 col-lg-4">
                 <div class="card">
-                    <a href="./post">
+                    <a [routerLink] = "'/post'">
                         <img class="card-img-top" src="assets/img/graphic-product-sidekick.jpg" alt="Card image cap">
                     </a>
                     <div class="card-body">
-                        <h4 class="card-title">Sidekick</h4>
-                        <p class="card-text">Holistic fitness tracking</p>
+                        <h4 class="card-title">Бег продливает жизнь</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet</p>
                     </div>
                     <div class="card-footer card-footer-borderless d-flex justify-content-between">
                         <div class="text-small">
@@ -299,9 +301,9 @@
                                 <i class="icon-dots-three-horizontal"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="SidekickButton">
-                                <a class="dropdown-item" href="#">Save</a>
-                                <a class="dropdown-item" href="#">Share</a>
-                                <a class="dropdown-item" href="#">Comment</a>
+                                <a class="dropdown-item" href="#">Сохранить</a>
+                                <a class="dropdown-item" href="#">Поделиться</a>
+                                <a class="dropdown-item" href="#">Комментировать</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Report</a>
                             </div>
@@ -309,32 +311,30 @@
                     </div>
                 </div>
             </li>
-            <!--end of col-->
-
             <li class="col-12 col-md-6 col-lg-4">
                 <div class="card">
-                    <a href="#">
-                        <img class="card-img-top" src="assets/img/graphic-product-pitstop.jpg" alt="Card image cap">
+                    <a [routerLink] = "'/post'">
+                        <img class="card-img-top" src="assets/img/graphic-product-sidekick.jpg" alt="Card image cap">
                     </a>
                     <div class="card-body">
-                        <h4 class="card-title">Pitstop</h4>
-                        <p class="card-text">Browser-based project management</p>
+                        <h4 class="card-title">Бег продливает жизнь</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet</p>
                     </div>
                     <div class="card-footer card-footer-borderless d-flex justify-content-between">
                         <div class="text-small">
                             <ul class="list-inline">
-                                <li class="list-inline-item"><i class="icon-heart"></i> 90</li>
-                                <li class="list-inline-item"><i class="icon-message"></i> 34</li>
+                                <li class="list-inline-item"><i class="icon-heart"></i> 221</li>
+                                <li class="list-inline-item"><i class="icon-message"></i> 14</li>
                             </ul>
                         </div>
                         <div class="dropup">
-                            <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow" type="button" id="PitstopButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow" type="button" id="SidekickButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="icon-dots-three-horizontal"></i>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="PitstopButton">
-                                <a class="dropdown-item" href="#">Save</a>
-                                <a class="dropdown-item" href="#">Share</a>
-                                <a class="dropdown-item" href="#">Comment</a>
+                            <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="SidekickButton">
+                                <a class="dropdown-item" href="#">Сохранить</a>
+                                <a class="dropdown-item" href="#">Поделиться</a>
+                                <a class="dropdown-item" href="#">Комментировать</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Report</a>
                             </div>
@@ -342,32 +342,30 @@
                     </div>
                 </div>
             </li>
-            <!--end of col-->
-
             <li class="col-12 col-md-6 col-lg-4">
                 <div class="card">
-                    <a href="#">
-                        <img class="card-img-top" src="assets/img/graphic-product-pipeline.jpg" alt="Card image cap">
+                    <a [routerLink] = "'/post'">
+                        <img class="card-img-top" src="assets/img/graphic-product-sidekick.jpg" alt="Card image cap">
                     </a>
                     <div class="card-body">
-                        <h4 class="card-title">pipeline.js</h4>
-                        <p class="card-text">Snappy UI interaction library with flexible API</p>
+                        <h4 class="card-title">Бег продливает жизнь</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet</p>
                     </div>
                     <div class="card-footer card-footer-borderless d-flex justify-content-between">
                         <div class="text-small">
                             <ul class="list-inline">
-                                <li class="list-inline-item"><i class="icon-heart"></i> 84</li>
-                                <li class="list-inline-item"><i class="icon-message"></i> 25</li>
+                                <li class="list-inline-item"><i class="icon-heart"></i> 221</li>
+                                <li class="list-inline-item"><i class="icon-message"></i> 14</li>
                             </ul>
                         </div>
                         <div class="dropup">
-                            <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow" type="button" id="pipeline.jsButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow" type="button" id="SidekickButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="icon-dots-three-horizontal"></i>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="pipeline.jsButton">
-                                <a class="dropdown-item" href="#">Save</a>
-                                <a class="dropdown-item" href="#">Share</a>
-                                <a class="dropdown-item" href="#">Comment</a>
+                            <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="SidekickButton">
+                                <a class="dropdown-item" href="#">Сохранить</a>
+                                <a class="dropdown-item" href="#">Поделиться</a>
+                                <a class="dropdown-item" href="#">Комментировать</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Report</a>
                             </div>
@@ -375,32 +373,30 @@
                     </div>
                 </div>
             </li>
-            <!--end of col-->
-
             <li class="col-12 col-md-6 col-lg-4">
                 <div class="card">
-                    <a href="#">
-                        <img class="card-img-top" src="assets/img/graphic-product-paydar.jpg" alt="Card image cap">
+                    <a [routerLink] = "'/post'">
+                        <img class="card-img-top" src="assets/img/graphic-product-sidekick.jpg" alt="Card image cap">
                     </a>
                     <div class="card-body">
-                        <h4 class="card-title">Paydar</h4>
-                        <p class="card-text">Location based touch payments</p>
+                        <h4 class="card-title">Бег продливает жизнь</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet</p>
                     </div>
                     <div class="card-footer card-footer-borderless d-flex justify-content-between">
                         <div class="text-small">
                             <ul class="list-inline">
-                                <li class="list-inline-item"><i class="icon-heart"></i> 253</li>
-                                <li class="list-inline-item"><i class="icon-message"></i> 19</li>
+                                <li class="list-inline-item"><i class="icon-heart"></i> 221</li>
+                                <li class="list-inline-item"><i class="icon-message"></i> 14</li>
                             </ul>
                         </div>
                         <div class="dropup">
-                            <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow" type="button" id="PaydarButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow" type="button" id="SidekickButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="icon-dots-three-horizontal"></i>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="PaydarButton">
-                                <a class="dropdown-item" href="#">Save</a>
-                                <a class="dropdown-item" href="#">Share</a>
-                                <a class="dropdown-item" href="#">Comment</a>
+                            <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="SidekickButton">
+                                <a class="dropdown-item" href="#">Сохранить</a>
+                                <a class="dropdown-item" href="#">Поделиться</a>
+                                <a class="dropdown-item" href="#">Комментировать</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Report</a>
                             </div>
@@ -408,32 +404,30 @@
                     </div>
                 </div>
             </li>
-            <!--end of col-->
-
             <li class="col-12 col-md-6 col-lg-4">
                 <div class="card">
-                    <a href="#">
-                        <img class="card-img-top" src="assets/img/graphic-product-kin.jpg" alt="Card image cap">
+                    <a [routerLink] = "'/post'">
+                        <img class="card-img-top" src="assets/img/graphic-product-sidekick.jpg" alt="Card image cap">
                     </a>
                     <div class="card-body">
-                        <h4 class="card-title">Kin</h4>
-                        <p class="card-text">The digital fashion assistant</p>
+                        <h4 class="card-title">Бег продливает жизнь</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet</p>
                     </div>
                     <div class="card-footer card-footer-borderless d-flex justify-content-between">
                         <div class="text-small">
                             <ul class="list-inline">
-                                <li class="list-inline-item"><i class="icon-heart"></i> 84</li>
-                                <li class="list-inline-item"><i class="icon-message"></i> 21</li>
+                                <li class="list-inline-item"><i class="icon-heart"></i> 221</li>
+                                <li class="list-inline-item"><i class="icon-message"></i> 14</li>
                             </ul>
                         </div>
                         <div class="dropup">
-                            <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow" type="button" id="KinButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow" type="button" id="SidekickButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="icon-dots-three-horizontal"></i>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="KinButton">
-                                <a class="dropdown-item" href="#">Save</a>
-                                <a class="dropdown-item" href="#">Share</a>
-                                <a class="dropdown-item" href="#">Comment</a>
+                            <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="SidekickButton">
+                                <a class="dropdown-item" href="#">Сохранить</a>
+                                <a class="dropdown-item" href="#">Поделиться</a>
+                                <a class="dropdown-item" href="#">Комментировать</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Report</a>
                             </div>
@@ -441,32 +435,30 @@
                     </div>
                 </div>
             </li>
-            <!--end of col-->
-
             <li class="col-12 col-md-6 col-lg-4">
                 <div class="card">
-                    <a href="#">
-                        <img class="card-img-top" src="assets/img/graphic-product-bench.jpg" alt="Card image cap">
+                    <a [routerLink] = "'/post'">
+                        <img class="card-img-top" src="assets/img/graphic-product-sidekick.jpg" alt="Card image cap">
                     </a>
                     <div class="card-body">
-                        <h4 class="card-title">Bench</h4>
-                        <p class="card-text">Accounting for creative people</p>
+                        <h4 class="card-title">Бег продливает жизнь</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet</p>
                     </div>
                     <div class="card-footer card-footer-borderless d-flex justify-content-between">
                         <div class="text-small">
                             <ul class="list-inline">
-                                <li class="list-inline-item"><i class="icon-heart"></i> 373</li>
-                                <li class="list-inline-item"><i class="icon-message"></i> 62</li>
+                                <li class="list-inline-item"><i class="icon-heart"></i> 221</li>
+                                <li class="list-inline-item"><i class="icon-message"></i> 14</li>
                             </ul>
                         </div>
                         <div class="dropup">
-                            <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow" type="button" id="BenchButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow" type="button" id="SidekickButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="icon-dots-three-horizontal"></i>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="BenchButton">
-                                <a class="dropdown-item" href="#">Save</a>
-                                <a class="dropdown-item" href="#">Share</a>
-                                <a class="dropdown-item" href="#">Comment</a>
+                            <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="SidekickButton">
+                                <a class="dropdown-item" href="#">Сохранить</a>
+                                <a class="dropdown-item" href="#">Поделиться</a>
+                                <a class="dropdown-item" href="#">Комментировать</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Report</a>
                             </div>
@@ -474,7 +466,6 @@
                     </div>
                 </div>
             </li>
-            <!--end of col-->
 
         </ul>
         <!--end of row-->
