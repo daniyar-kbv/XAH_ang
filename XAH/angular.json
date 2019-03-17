@@ -27,15 +27,28 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/css/theme.css",
+              "src/assets/css/entypo.css",
+              "src/assets/css/socicon.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/popper.js/dist/umd/popper.min.js",
-              "node_modules/prismjs/prism.js",
-              "node_modules/scrollmonitor/scrollMonitor.js",
-              "node_modules/smartwizard/dist/js/jquery.smartWizard.min.js",
-              "node_modules/smooth-scroll/dist/smooth-scroll.min.js"
+                "node_modules/jquery/dist/jquery.min.js",
+                "node_modules/popper.js/dist/umd/popper.min.js",
+                "node_modules/prismjs/prism.js",
+                "node_modules/scrollmonitor/scrollMonitor.js",
+                "node_modules/smartwizard/dist/js/jquery.smartWizard.min.js",
+                "node_modules/smooth-scroll/dist/smooth-scroll.min.js",
+                "src/assets/js/jquery.min.js",
+                "src/assets/js/popper.min.js",
+                "src/assets/js/jquery.smartWizard.min.js",
+                "src/assets/js/flickity.pkgd.min.js",
+                "src/assets/js/scrollMonitor.js",
+                "src/assets/js/smooth-scroll.polyfills.js",
+                "src/assets/js/prism.js",
+                "src/assets/js/zoom.min.js",
+                "src/assets/js/bootstrap.js",
+                "src/assets/js/theme.js"
             ],
             "es5BrowserSupport": true
           },
