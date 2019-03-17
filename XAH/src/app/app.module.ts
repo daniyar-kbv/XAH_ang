@@ -7,6 +7,8 @@ import { MainComponent } from './main/main.component';
 import { PostComponent } from './post/post.component';
 import { CategoryComponent } from './category/category.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
