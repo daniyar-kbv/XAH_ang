@@ -13,9 +13,6 @@ class ArticleListCreate(generics.ListCreateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
 
-    # def get_queryset(self):
-    #     return Article.objects.filter(created_by=self.request.user)
-
     def perform_create(self, serializer):
         return serializer.save(created_by=self.request.user)
 
@@ -28,10 +25,38 @@ class ArticleDetailUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = 'pk'
 
     def get_object(self):
-        return Article.objects.get(id=self.kwargs[self.lookup_field])
+        article = Article.objects.get(id=self.kwargs[self.lookup_field])
+        article.views += 1
+        article.save()
+        return article
 
     def perform_update(self, serializer):
         serializer.save()
 
     def perform_destroy(self, instance):
         instance.delete()
+
+# class ArticleDetail(generics.RetrieveAPIView):
+#     serializer_class = ArticleSerializer
+#     lookup_field = 'pk'
+
+#     def get_object(self):
+#         article = Article.objects.get(id=self.kwargs[self.lookup_field])
+#         article.views += 1
+#         return article
+
+
+class ArticleList(generics.ListAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+
+class ArticleDetail(generics.RetrieveAPIView):
+    serializer_class = ArticleSerializer
+    lookup_field = 'pk'
+
+    def get_object(self):
+        article = Article.objects.get(id=self.kwargs[self.lookup_field])
+        article.views += 1
+        article.save()
+        return article
+
