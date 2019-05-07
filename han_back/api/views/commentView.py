@@ -32,7 +32,10 @@ class CommentCreate(generics.CreateAPIView):
 class CommentDelete(generics.DestroyAPIView):
     authentication_classes = (JSONWebTokenAuthentication, )
     serializer_class = CommentSerializer
-    lookup_url_kwarg = 'article_id'
+    lookup_url_kwarg = 'pk'
+
+    def get_object(self):
+        return Comment.objects.get(id=self.kwargs[self.lookup_field])
 
     def perform_destroy(self, instance):
         instance.delete()
