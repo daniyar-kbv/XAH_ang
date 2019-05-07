@@ -2,8 +2,11 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import generics
 from rest_framework import status
-from api.models import CommentLike, Comment
-from api.serializers import CategorySerializer
+from ..models.comment import Comment
+from ..models.commentLikeModel import CommentLike
+from ..serializers.categorySerializer import CategorySerializer
+from ..serializers.commentLikeSerializer import CommentLikeSerializer
+from rest_framework.views import APIView
 
 
 @api_view(['GET', 'POST'])
