@@ -1,1 +1,1 @@
-from .articleLikeViews import articleLike_list, articleLike_delete
+from .articleLikeViews import articleLike_list
