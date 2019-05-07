@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class CommentManager()
+# class CommentManager()
 
 
 class Comment(models.Model):
