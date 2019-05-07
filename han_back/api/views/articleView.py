@@ -13,9 +13,6 @@ class ArticleListCreate(generics.ListCreateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
 
-    # def get_queryset(self):
-    #     return Article.objects.filter(created_by=self.request.user)
-
     def perform_create(self, serializer):
         return serializer.save(created_by=self.request.user)
 
