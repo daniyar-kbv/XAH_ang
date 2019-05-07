@@ -5,7 +5,7 @@ from .models.comment import Comment
 from .models.category import Category
 
 # Register your models here.
-admin.register(ArticleLike)
+admin.site.register(ArticleLike)
 admin.site.register(Article)
 admin.site.register(Comment)
 admin.site.register(Category)
