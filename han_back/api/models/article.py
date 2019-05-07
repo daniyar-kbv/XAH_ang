@@ -12,6 +12,7 @@ class Article(models.Model):
     title = models.CharField(max_length=512)
     body = models.CharField(max_length=1024)
     imageUrl = models.CharField(max_length=512)
+    views = models.IntegerField(default=0)
     created_at = models.DateTimeField(default=datetime.now)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None)
