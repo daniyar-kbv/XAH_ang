@@ -9,7 +9,7 @@ from rest_framework_jwt.views import obtain_jwt_token
 
 urlpatterns = [
     path('articles/', ArticleListCreate.as_view()),
-    path('articles/<int:pk/', ArticleDetailUpdateDelete.as_view()),
+    path('articles/<int:pk>/', ArticleDetailUpdateDelete.as_view()),
     # path('articles/<int:pk>/likes/', articleLike_list()),
     # path('articles/<int:pk>/likes/<int:pk>/', articleLike_delete.as_view()),
     path('articles/<int:pk>/likes/', articleLike_list.as_view()),
