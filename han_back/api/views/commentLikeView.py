@@ -11,6 +11,11 @@ from rest_framework.views import APIView
 
 @api_view(['GET', 'POST'])
 def commentLike_list(request, pk):
+	try:
+		comment = Comment.objects.for_user(request.user).get(id=pk)
+	except Comment.DoesNotExist as e:
+		return Response({'error': f'{e}'}, status=status.HTTP_404_NOT_FOUND)
+
 	if request.method == 'GET':
 		likes = CommentLike.objects.get(id=pk)
 		serializer = CommentLikeSerializer(likes, many=True)
@@ -18,10 +23,10 @@ def commentLike_list(request, pk):
 
 	elif request.method == 'POST':
 		serializer = CommentLikeSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save(owner=request.user)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+		if serializer.is_valid():
+			serializer.save(owner=request.user)
+			return Response(serializer.data, status=status.HTTP_201_CREATED)
+			return Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class commentLike_delete(APIView):
 	def delete(self, request, pk):

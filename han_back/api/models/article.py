@@ -18,3 +18,6 @@ class Article(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None)
 
     # objects = ArticleManager()
+
+    def __str__(self):
+        return '{}: {}'.format(self.id, self.title)
