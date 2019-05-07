@@ -1,9 +1,10 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .article import Article
-from .serializers import UserModelSerializer
-from api.serializers import CategorySerializer
+from ..models import Article
+from ..serializers import UserModelSerializer
+from ..serializers.categorySerializer import CategorySerializer
 from api.models import Article
+
 
 class ArticleSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
