@@ -1,1 +1,2 @@
-from .user import UserModelSerializer
+from .userSerializer import UserModelSerializer
+from .commentSerializer import CommentSerializer

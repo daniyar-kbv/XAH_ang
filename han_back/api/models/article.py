@@ -1,12 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
-from categoryModel import Category
+from .category import Category
 
 from datetime import datetime
+
 
 class ArticleManager(models.Manager):
     def for_category(self, category):
         return self.filter(category=category)
+
 
 class Article(models.Model):
     title = models.CharField(max_length=512)
