@@ -19,7 +19,7 @@ class CommentArticleManager(models.Manager):
 class Comment(models.Model):
     body = models.CharField(max_length=255)
     date_published = models.DateTimeField(default=datetime.now)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
-    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, default=None)
 
     comments_by_article = CommentArticleManager()
