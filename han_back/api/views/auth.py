@@ -1,5 +1,5 @@
 from rest_framework.generics import CreateAPIView
-from han_back.api.serializers.user import UserModelSerializer
+from ..serializers.user import UserModelSerializer
 
 class Register(CreateAPIView):
     authentication_classes = ()
