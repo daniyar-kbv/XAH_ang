@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from .categoryModel import Category
+from .category import Category
 
 from datetime import datetime
 

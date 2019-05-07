@@ -1,2 +1,2 @@
-from .user import UserModelSerializer
+from .userSerializer import UserModelSerializer
 from .articleLikeSerializer import ArticleLikeModelSerializer
