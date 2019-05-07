@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-
+from .article import Article
 from api.serializers import UserModelSerializer
 from api.serializers import CategorySerializer
 from api.models import Article
