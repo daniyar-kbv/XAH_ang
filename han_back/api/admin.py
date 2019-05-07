@@ -4,7 +4,6 @@ from .models.article import Article
 from .models.comment import Comment
 from .models.category import Category
 
-
 # Register your models here.
 admin.register(ArticleLike)
 admin.site.register(Article)
