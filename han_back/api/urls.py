@@ -11,3 +11,4 @@ urlpatterns = [
     path('register/', Register.as_view()),
     path('login/', obtain_jwt_token),
 ]
+dan huen
