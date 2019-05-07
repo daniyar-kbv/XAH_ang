@@ -1,6 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# class CategoryManager(models.Manager):
+#     def for_user(self, user):
+#         return self.filter(owner=user)
+
 class Category(models.Model):
     name = models.CharField('Name',max_length=200)
 
