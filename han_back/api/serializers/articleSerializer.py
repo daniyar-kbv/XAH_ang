@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
 
-from api.models import Article
+from .article import Article
 
 class ContactSerializer(serializers.ModelSerializer):
 
