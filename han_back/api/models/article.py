@@ -1,14 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
-from .category import Category
+from .categoryModel import Category
 
 from datetime import datetime
-
 
 class ArticleManager(models.Manager):
     def for_category(self, category):
         return self.filter(category=category)
-
 
 class Article(models.Model):
     title = models.CharField(max_length=512)
@@ -18,4 +16,4 @@ class Article(models.Model):
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None)
 
-    objects = ArticleManager()
+    # objects = ArticleManager()
