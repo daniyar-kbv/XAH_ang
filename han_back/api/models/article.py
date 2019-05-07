@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from categoryModel import Category
+from .categoryModel import Category
 
 from datetime import datetime
 
@@ -16,4 +16,4 @@ class Article(models.Model):
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None)
 
-    objects = ArticleManager()
+    # objects = ArticleManager()
