@@ -7,6 +7,11 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
+    { 
+        path: '',
+        redirectTo: '/main',
+        pathMatch: 'full'
+    },
     { path: 'main', component: MainComponent },
     { path: 'post', component: PostComponent },
     { path: 'category', component: CategoryComponent },
