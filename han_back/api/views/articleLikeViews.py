@@ -9,8 +9,8 @@ from rest_framework.response import Response
 
 class articleLike_list(APIView):
 	def get(self, request):
-		task_lists = ArticleLike.objects.all()
-		serializer = ArticleLikeModelSerializer(task_lists, many=True)
+		likes = ArticleLike.objects.all()
+		serializer = ArticleLikeModelSerializer(likes, many=True)
 		return Response(serializer.data)
 
 	def post(self, request):
