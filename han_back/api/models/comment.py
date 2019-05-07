@@ -6,14 +6,15 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-class CommentArticleManager(models.Manager):
-    def get_queryset(self, article_id):
+class CommentManager(models.Manager):
+
+    def comments_article(self, article_id):
         try:
             article = Article.objects.get(id=article_id)
         except Article.DoesNotExist:
             return Response(status.HTTP_404_NOT_FOUND)
 
-        return super().get_queryset().filter(article=article)
+        return super(CommentManager, self).get_queryset().filter(article=article)
 
 
 class Comment(models.Model):
@@ -22,4 +23,9 @@ class Comment(models.Model):
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     article = models.ForeignKey(Article, on_delete=models.CASCADE, default=None)
 
-    comments_by_article = CommentArticleManager()
+    # objects = models.Manager
+    # comments_by_article = CommentManager()
+    objects = CommentManager()
+
+    def __str__(self):
+        return self.body

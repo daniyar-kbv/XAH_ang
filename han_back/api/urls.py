@@ -5,6 +5,7 @@ from .views.commentLikeView import commentLike_list
 from .views.auth import Register
 from .views.articleView import ArticleDetailUpdateDelete, ArticleListCreate
 from rest_framework_jwt.views import obtain_jwt_token
+from .views.commentView import CommentList, CommentCreate
 
 
 urlpatterns = [
@@ -16,4 +17,8 @@ urlpatterns = [
     path('comments/<int:pk>/likes/', commentLike_list),
     path('register/', Register.as_view()),
     path('login/', obtain_jwt_token),
+
+    # Comments
+    path('articles/<int:article_id>/comments/', CommentList.as_view()),
+    path('articles/<int:article_id>/comments/create/', CommentCreate.as_view())
 ]
