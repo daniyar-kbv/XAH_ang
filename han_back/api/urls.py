@@ -7,14 +7,7 @@ from rest_framework_jwt.views import obtain_jwt_token
 
 
 urlpatterns = [
-<<<<<<< HEAD
-    path('articles/', ArticleListCreate.as_view()),
-    path('articles/<int:pk/', ArticleDetailUpdateDelete.as_view()),
-    # path('articles/<int:pk>/likes/', articleLike_list()),
-    # path('articles/<int:pk>/likes/<int:pk>/', articleLike_delete.as_view()),
-=======
     path('articles/<int:pk>/likes/', articleLike_list.as_view()),
->>>>>>> 3b244a764b43f2142820e9517fb16c4df10e5624
     path('register/', Register.as_view()),
     path('login/', obtain_jwt_token),
 ]
