@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IArticle } from "../shared/models/article";
+import { ProviderService } from "../shared/services/provider.service";
 
 @Component({
   selector: 'app-post',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-
-  constructor() { }
+  public current_article: IArticle;
+  constructor(private provider: ProviderService) { }
 
   ngOnInit() {
+    this.provider.getArticle().then(res => {
+      this.current_article = res;
+    })
   }
 
 }

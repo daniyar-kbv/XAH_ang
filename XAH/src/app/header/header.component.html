@@ -1,0 +1,91 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<meta charset="utf-8">
+<title>Top Navbar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A robust suite of app and landing page templates by Medium Rare">
+<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,500" rel="stylesheet">
+<link href="../assets/css/socicon.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../assets/css/entypo.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../assets/css/header.css" rel="stylesheet" type="text/css" media="all" />
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 offset-md-7">
+        <h3 class="h3_big">Мы в социальных сетях</h3>
+      </div>
+    </div>
+    <div class="row social">
+      <div class="col-auto mb-1">
+        <i class="socicon-whatsapp h3 social_icon"></i>
+      </div>
+      <div class="col-auto mb-1">
+        <i class="socicon-twitter h3 social_icon"></i>
+      </div>
+      <div class="col-auto mb-1">
+        <i class="socicon-instagram h3 social_icon"></i>
+      </div>
+      <div class="col-auto mb-1">
+        <i class="socicon-vkontakte h3 social_icon"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 offset-md-7 xan-holder">
+        <h1 class="h1_big">XAH</h1>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="nav-container">
+  <div class="bg-dark navbar-dark" data-sticky="top">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <div class="col-sm-2">
+          <h5>Алматы, 18 °C</h5>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="icon-menu h4"></i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a routerLink="/main" routerLinkActive="active" class="nav-link">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/category" routerLinkActive="active" class="nav-link">Авто</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/category" routerLinkActive="active" class="nav-link">Бизнес</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/category" routerLinkActive="active" class="nav-link">Спорт</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav w-50">
+            <form class="form-inline col p-0 pl-md-2 pr-md-3">
+              <input class="form-control w-100" type="search" placeholder="Поиск" aria-label="Search">
+            </form>
+            <ng-container *ngIf="isLogged">
+              <!--<div class="col-sm-2">-->
+                <!--<h5>Здравствуйте </h5>-->
+              <!--</div>-->
+              <div class="col-sm-2">
+                <!--<h5><a routerLink="/login" routerLinkActive="active" class="nav-link">Выйти</a></h5>-->
+                <h5><a class="nav-link" (click)="logout()">Выйти</a></h5>
+              </div>
+            </ng-container>
+            <ng-container *ngIf="!isLogged">
+              <div class="col-sm-2">
+                <h5><a routerLink="/login" routerLinkActive="active" class="nav-link">Войти</a></h5>
+              </div>
+            </ng-container>
+          </ul>
+        </div>
+        <!--end nav collapse-->
+      </nav>
+    </div>
+    <!--end of container-->
+  </div>
+</div>
