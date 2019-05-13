@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { IAuthResponse } from '../models/authResponse'
 import {IArticle} from '../models/article';
 import {IComment} from '../models/comment';
+import {IUser} from '../models/user';
 
 
 @Injectable({
@@ -22,9 +23,17 @@ export class ProviderService extends MainService{
   }
 
   login(username: any, password: any): Promise<IAuthResponse>{
-    return this.post('http://localhost:8000/api/login/', {
+    return this.post( this.baseUrl + 'login/', {
       username: username,
       password: password
+    })
+  }
+
+  register(username: any, password: any, email: any): Promise<IUser>{
+    return this.post(  this.baseUrl + 'register/', {
+      username: username,
+      password: password,
+      email: email
     })
   }
   
