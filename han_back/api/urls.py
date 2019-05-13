@@ -5,7 +5,7 @@ from .views.commentLikeView import commentLike_list
 from .views.auth import login, logout, register
 from .views.articleView import ArticleDetailUpdateDelete, ArticleListCreate
 from rest_framework_jwt.views import obtain_jwt_token
-from .views.commentView import CommentList, CommentCreate
+from .views.commentView import CommentList, CommentCreate, CommentDelete
 
 
 urlpatterns = [
@@ -21,5 +21,6 @@ urlpatterns = [
 
     # Comments
     path('articles/<int:article_id>/comments/', CommentList.as_view()),
-    path('articles/<int:article_id>/comments/create/', CommentCreate.as_view())
+    path('articles/<int:article_id>/comments/create/', CommentCreate.as_view()),
+    path('comments/delete/<int:pk>/', CommentDelete.as_view())
 ]
