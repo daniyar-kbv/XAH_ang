@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { MainService } from './main.service';
 import { HttpClient } from '@angular/common/http';
-import { IAuthResponse } from '../models/authResponse'
+import { IAuthResponse } from '../../models/authResponse'
+import {IArticle} from '../models/article';
+import {IComment} from '../models/comment';
 
 
 @Injectable({
@@ -15,8 +17,12 @@ export class ProviderService extends MainService{
     super(http);
   }
 
-  login(username: any, password: any): Promise<IAuthResponse> {
-    return this.post(this.baseUrl + 'login/', {
+  getComments(articleId: any): Promise<IComment[]>{
+    return this.get(this.baseUrl + `articles/${articleId}/comments/`, {})
+  }
+
+  login(username: any, password: any): Promise<IAuthResponse>{
+    return this.post('http://localhost:8000/api/login/', {
       username: username,
       password: password
     })
