@@ -5,11 +5,10 @@
                     <div class="col">
                         <div class="media align-items-center">
                             <div class="media-body">
-                                <h1 class="display-4"><strong>Казахстан участвует во Всемирных специальных Олимпийских играх</strong></h1>
-                                <span class="lead">Президент РК посетил торжественное открытие Всемирных специальных Олимпийских игр, участие в которых принимают только страны Ближнего Востока и Северной Африки. </span>
+                                <h1 class="display-4" *ngIf="current_article"><strong>{{current_article.title}}</strong></h1>
+                                <span class="lead"> {{current_article.body}} </span>
                                 <div class="d-flex align-items-center">
-                                    <span class="badge badge-secondary mr-3">Политика</span>
-                                    <span class="badge badge-secondary mr-3">Бизнес</span>
+                                    <span class="badge badge-secondary mr-3">{{current_article.category}}</span>
                                     <ul class="list-inline text-small d-inline-block">
                                         <li class="list-inline-item"><i class="icon-thumbs-up"></i> 214</li>
                                         <li class="list-inline-item"><i class="icon-message"></i> 6</li>

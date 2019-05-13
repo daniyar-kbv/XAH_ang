@@ -25,4 +25,8 @@ export class ProviderService extends MainService{
   logout(): Promise<any> {
     return this.post(this.baseUrl + 'logout/', {});
   }
+
+  getArticle(article: IArticle): Promise<IArticle>{
+    return this.get(`http://localhost:8000/api/articles/1/`, {})
+  }
 }

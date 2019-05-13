@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IArticle } from "../models/models";
 
 @Component({
   selector: 'app-post',
@@ -12,4 +13,9 @@ export class PostComponent implements OnInit {
   ngOnInit() {
   }
 
+  getArticle(article: IArticle){
+    this.provider.getArticle(article).then(res => {
+      this.current_article = res;
+    })
+  }
 }
