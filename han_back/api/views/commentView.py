@@ -4,7 +4,7 @@ from ..serializers.commentSerializer import CommentSerializer
 from ..models.article import Article
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework_jwt.authentication import JSONWebTokenAuthentication
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
 
@@ -17,7 +17,7 @@ class CommentList(generics.ListAPIView):
 
 
 class CommentCreate(generics.CreateAPIView):
-    authentication_classes = (JSONWebTokenAuthentication, )
+    authentication_classes = (TokenAuthentication, )
     permission_classes = (IsAuthenticated, )
     serializer_class = CommentSerializer
     lookup_field = 'article_id'
@@ -33,7 +33,7 @@ class CommentCreate(generics.CreateAPIView):
 
 class CommentDelete(generics.DestroyAPIView):
     permission_classes = (IsAuthenticated, )
-    authentication_classes = (JSONWebTokenAuthentication, )
+    authentication_classes = (TokenAuthentication, )
     serializer_class = CommentSerializer
     lookup_url_kwarg = 'pk'
 
