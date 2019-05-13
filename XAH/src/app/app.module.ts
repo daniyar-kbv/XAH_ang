@@ -9,6 +9,9 @@ import { CategoryComponent } from './category/category.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { CommentsComponent } from './comments/comments.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+
 
 
 
@@ -19,12 +22,15 @@ import { RegistrationComponent } from './registration/registration.component';
     PostComponent,
     CategoryComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    CommentsComponent,
   ],
   imports: [
     NgbModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
