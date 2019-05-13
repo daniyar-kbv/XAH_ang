@@ -14,7 +14,6 @@ urlpatterns = [
     # path('articles/<int:pk>/likes/', articleLike_list()),
     # path('articles/<int:pk>/likes/<int:pk>/', articleLike_delete.as_view()),
     path('articles/<int:pk>/likes/', articleLike_list.as_view()),
-    path('comments/<int:pk>/likes/', commentLike_list.as_view()),
     path('register/', register),
     path('login/', login),
     path('logout/', logout),
@@ -22,5 +21,6 @@ urlpatterns = [
     # Comments
     path('articles/<int:article_id>/comments/', CommentList.as_view()),
     path('articles/<int:article_id>/comments/create/', CommentCreate.as_view()),
+    path('articles/<int:article_id>/comments/<int:pk>/likes/', commentLike_list.as_view()),
     path('comments/delete/<int:pk>/', CommentDelete.as_view())
 ]
