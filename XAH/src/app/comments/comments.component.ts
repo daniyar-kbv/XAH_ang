@@ -9,7 +9,7 @@ import { IComment } from '../shared/models/comment';
 })
 export class CommentsComponent implements OnInit {
   public comments: IComment[] = [];
-  // public task_lists: ITaskList[] = [];
+  public commentBody: string = '';
 
 
   constructor(private provider: ProviderService) { }
@@ -18,9 +18,12 @@ export class CommentsComponent implements OnInit {
     this.provider.getComments('1').then(res => {
       this.comments = res;
     })
-    // this.provider.getTaskLists().then(res => {
-    //   this.task_lists = res;
-    // })
+  }
+
+  createComment(body){
+    this.provider.createComment(body, '1').then(res => {
+
+    })
   }
 
 }

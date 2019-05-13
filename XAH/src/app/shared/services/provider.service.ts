@@ -22,6 +22,12 @@ export class ProviderService extends MainService{
     return this.get(this.baseUrl + `articles/${articleId}/comments/`, {})
   }
 
+  createComment(body: string, articleId: any): Promise<IComment>{
+    return this.post(this.baseUrl + `articles/${articleId}/comments/create/`, {
+      body: body
+    })
+  }
+
   login(username: any, password: any): Promise<IAuthResponse>{
     return this.post( this.baseUrl + 'login/', {
       username: username,
