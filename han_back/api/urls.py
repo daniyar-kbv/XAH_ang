@@ -6,9 +6,13 @@ from .views.auth import Register
 from .views.articleView import ArticleDetailUpdateDelete, ArticleListCreate
 from rest_framework_jwt.views import obtain_jwt_token
 from .views.commentView import CommentList, CommentCreate, CommentDelete
+from .views.welcomeView import welcome
 
 
 urlpatterns = [
+    # Welcome page
+    path('', welcome),
+
     path('articles/', ArticleListCreate.as_view()),
     path('articles/<int:pk>/', ArticleDetailUpdateDelete.as_view()),
     # path('articles/<int:pk>/likes/', articleLike_list()),
