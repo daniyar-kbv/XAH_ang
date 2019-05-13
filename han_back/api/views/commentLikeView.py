@@ -2,6 +2,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import generics
 from rest_framework import status
+from rest_framework.views import APIView
 from ..models.comment import Comment
 from ..models.commentLikeModel import CommentLike
 from ..serializers.categorySerializer import CategorySerializer
@@ -9,26 +10,29 @@ from ..serializers.commentLikeSerializer import CommentLikeSerializer
 from rest_framework.views import APIView
 
 
-@api_view(['GET', 'POST'])
-def commentLike_list(request, pk):
-	try:
-		comment = Comment.objects.for_user(request.user).get(id=pk)
-	except Comment.DoesNotExist as e:
-		return Response({'error': f'{e}'}, status=status.HTTP_404_NOT_FOUND)
-
-	if request.method == 'GET':
-		likes = CommentLike.objects.get(id=pk)
+class commentLike_list(APIView):
+	def get(self, request, pk):
+		likes = CommentLike.objects.all()
 		serializer = CommentLikeSerializer(likes, many=True)
 		return Response(serializer.data)
 
-	elif request.method == 'POST':
+	def post(self, request, pk):
 		serializer = CommentLikeSerializer(data=request.data)
-		if serializer.is_valid():
-			serializer.save(owner=request.user)
-			return Response(serializer.data, status=status.HTTP_201_CREATED)
-			return Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+		try:
+			comment = Comment.objects.get(id=pk)
+		except Comment.DoesNotExist:
+			return Response(status.HTTP_404_NOT_FOUND)
 
-class commentLike_delete(APIView):
+
+		commentlikes = CommentLike.objects.filter(user=request.user, comment=Comment.objects.get(id=pk))
+		if (serializer.is_valid() and len(commentlikes)==0):
+			serializer.save(user=request.user, comment=comment)
+			return Response(serializer.data, status=status.HTTP_201_CREATED)
+		else:
+			return Response(status.HTTP_302_FOUND)
+
+		return Response(status.HTTP_404_NOT_FOUND)
+
 	def delete(self, request, pk):
 		like = self.get_object(pk)
 		like.delete()
