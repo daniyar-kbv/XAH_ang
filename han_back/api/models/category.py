@@ -9,7 +9,7 @@ class Category(models.Model):
     name = models.CharField('Name',max_length=200)
 
     def __str__(self):
-        return '{}: {}'.format(self.id, self.name)
+        return '{}'.format(self.name)
 
     def to_json(self):
         return {
