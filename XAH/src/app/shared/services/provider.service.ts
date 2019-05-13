@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MainService } from './main.service';
 import { HttpClient } from '@angular/common/http';
-import { IAuthResponse } from '../../models/authResponse'
+import { IAuthResponse } from '../models/authResponse'
 import {IArticle} from '../models/article';
 import {IComment} from '../models/comment';
 
@@ -32,7 +32,7 @@ export class ProviderService extends MainService{
     return this.post(this.baseUrl + 'logout/', {});
   }
 
-  getArticle(article: IArticle): Promise<IArticle>{
+  getArticle(): Promise<IArticle>{
     return this.get(`http://localhost:8000/api/articles/1/`, {})
   }
 }
