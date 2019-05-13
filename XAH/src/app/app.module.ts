@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, ClassProvider } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
@@ -11,9 +10,11 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { CommentsComponent } from './comments/comments.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
-
-
-
+import { AuthInterceptor } from './AuthInterceptor';
+import { ProviderService } from './shared/services/provider.service';
+import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,15 +25,24 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
     LoginComponent,
     RegistrationComponent,
     CommentsComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     NgbModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    ProviderService,
+    <ClassProvider> {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

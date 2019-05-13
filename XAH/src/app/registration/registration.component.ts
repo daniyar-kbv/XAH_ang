@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProviderService } from '../shared/services/provider.service';
 
 @Component({
   selector: 'app-registration',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
+  public username: any='';
+  public password: any='';
+  public email: any='';
 
-  constructor() { }
+  constructor(private provider: ProviderService) { }
 
   ngOnInit() {
+
+  }
+
+  register(){
+    if (this.username != '' && this.password != ''){
+      this.provider.register(this.username, this.password, this.email).then(res => {
+        this.username = '';
+        this.password = '';
+        this.email = '';
+      })
+    }
   }
 
 }

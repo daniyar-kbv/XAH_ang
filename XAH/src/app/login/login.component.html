@@ -4,9 +4,7 @@
     <section class="space-sm">
         <div class="container align-self-start">
             <div class="row mb-5">
-                <!--end of col-->
             </div>
-            <!--end of row-->
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8 col-lg-7">
                     <div class="card card-lg text-center">
@@ -18,12 +16,12 @@
                             <div class="row no-gutters justify-content-center">
                                 <form class="text-left col-lg-8 dark-form">
                                     <div class="form-group">
-                                        <label for="login-email">Электронная почта</label>
-                                        <input class="form-control form-control-lg" type="email" name="email" id="login-email" placeholder="Адрес почты" />
+                                        <label for="login-email">Имя пользователя</label>
+                                        <input class="form-control form-control-lg" type="text" name="email" id="login-email" placeholder="Введите имя пользователя" [(ngModel)]="username"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="login-password">Пароль</label>
-                                        <input class="form-control form-control-lg" type="password" name="password" id="login-password" placeholder="Введите пароль" />
+                                        <input class="form-control form-control-lg" type="password" name="password" id="login-password" placeholder="Введите пароль" [(ngModel)]="password"/>
                                         <small>Забыли пароль? <a href="#">Сбросить</a>
                                         </small>
                                     </div>
@@ -34,11 +32,10 @@
                                         </div>
                                     </div>
                                     <div class="text-center mt-3">
-                                        <button type="submit" class="btn btn-lg btn-primary btn-block">Войти</button>
+                                        <button type="submit" class="btn btn-lg btn-primary btn-block" (click)="login()">Войти</button>
                                     </div>
                                 </form>
                             </div>
-                            <!--end of row-->
                         </div>
                     </div>
                     <div class="text-center">
@@ -46,11 +43,7 @@
                         </span>
                     </div>
                 </div>
-                <!--end of col-->
             </div>
-            <!--end of row-->
         </div>
-        <!--end of container-->
     </section>
-    <!--end of section-->
 </div>
