@@ -13,10 +13,10 @@ class ArticleSerializer(serializers.Serializer):
     title = serializers.CharField(required=True)
     body = serializers.CharField(required=True)
     views = serializers.IntegerField(required=False)
-    imageUrl = serializers.CharField(required=False)
+    image_url = serializers.CharField(required=False)
     created_at = serializers.DateTimeField(required=False)
-    created_by = UserModelSerializer()
-    category = CategorySerializer()
+    created_by = serializers.CharField()
+    category = serializers.CharField()
 
     def create(self, validated_data):
         article = Article(**validated_data)
