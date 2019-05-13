@@ -8,10 +8,10 @@
                                 <h1 class="display-4" *ngIf="current_article"><strong>{{ current_article.title }}</strong></h1>
                                 <span class="lead" *ngIf="current_article"> {{ current_article.body }} </span>
                                 <div class="d-flex align-items-center">
-                                    <span class="badge badge-secondary mr-3" *ngIf="current_article">{{ current_article.category.namegit  }}</span>
+                                    <span class="badge badge-secondary mr-3" *ngIf="current_article">{{ current_article.category.name }}</span>
                                     <ul class="list-inline text-small d-inline-block">
-                                        <li class="list-inline-item"><i class="icon-thumbs-up"></i> 214</li>
-                                        <li class="list-inline-item"><i class="icon-message"></i> 6</li>
+                                      <li class="list-inline-item"><button (click)="putLike()"><i class="icon-thumbs-up"></i></button> 214</li>
+                                      <li class="list-inline-item"><button><i class="icon-message"></i></button> 6</li>
                                     </ul>
                                 </div>
                             </div>
