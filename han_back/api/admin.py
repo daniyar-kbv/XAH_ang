@@ -7,7 +7,7 @@ from .adminModels.commentAdmin import CommentAdmin
 from .models.commentLikeModel import CommentLike
 
 # Register your models here.
-admin.register(ArticleLike)
+admin.site.register(ArticleLike)
 admin.site.register(Article)
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Category)
