@@ -15,7 +15,8 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.provider.getArticlesByViews().then(res => {
       this.articles = res;
-    })
+    });
+
   }
 
 }

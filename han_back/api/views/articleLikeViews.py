@@ -35,16 +35,16 @@ class articleLike_list(APIView):
 
         articlelikes = ArticleLike.objects.filter(user=request.user, article=Article.objects.get(id=pk))
 
-        if (serializer.is_valid() and len(articlelikes)==0):
-            serializer.save(user=request.user, article=article)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        else:
-            return Response(status.HTTP_302_FOUND)
+        try:
+            if (serializer.is_valid() and len(articlelikes)==0):
+                serializer.save(user=request.user, article=article)
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except:
+            Response(status.HTTP_400_BAD_REQUEST)
 
-        return Response(status.HTTP_404_NOT_FOUND)
 
     def delete(self, request, pk):
-        like = self.get_object(pk)
-        like.delete()
+        articleLike = ArticleLike.objects.filter(user=request.user, article=Article.objects.get(id=pk))
+        articleLike.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
