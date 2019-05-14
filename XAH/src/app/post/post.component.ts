@@ -12,7 +12,7 @@ import { ProviderService } from '../shared/services/provider.service';
 export class PostComponent implements OnInit {
   public currentArticle: IArticle;
   public likes: IArticleLike[] = [];
-
+  public isLiked = false;
 
   constructor(private provider: ProviderService) { }
 
@@ -29,10 +29,12 @@ export class PostComponent implements OnInit {
     this.provider.putArticleLike().then(res => {
       console.log(res)
       this.likes.push(res);
+      this.isLiked = true;
     }).catch((err) => {
       this.provider.deleteArticleLike();
       this.likes.pop();
       console.log(err);
+      this.isLiked = false;
   });
   }
 }

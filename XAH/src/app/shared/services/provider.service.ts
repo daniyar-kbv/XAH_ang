@@ -68,15 +68,15 @@ export class ProviderService extends MainService {
   }
 
   getArticle(): Promise<IArticle> {
-    return this.get(this.baseUrl  + 'articles/3/', {});
+    return this.get(this.baseUrl  + 'articles/4/', {});
   }
 
   putArticleLike() {
-    return this.post(this.baseUrl  + 'articles/3/likes/', {});
+    return this.post(this.baseUrl  + 'articles/4/likes/', {});
   }
 
   getArticleLikes() {
-    return this.get(this.baseUrl  + 'articles/3/likes/', {});
+    return this.get(this.baseUrl  + 'articles/4/likes/', {});
   }
 
   createArticle(title, body, category, imageUrl): Promise<any>{
@@ -92,7 +92,7 @@ export class ProviderService extends MainService {
   }
 
   deleteArticleLike() {
-    return this.delete(this.baseUrl  + 'articles/3/likes/', {});
+    return this.delete(this.baseUrl  + 'articles/4/likes/', {});
   }
 
   putCommentLike() {
