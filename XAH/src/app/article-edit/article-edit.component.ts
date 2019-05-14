@@ -31,10 +31,17 @@ export class ArticleEditComponent implements OnInit {
       this.provider.getArticle(this.articleId).then(res => {
         this.title = res.title;
         this.body = res.body;
-        this.category = res.category;
+        console.log(res.category);
+        this.category = this.getCategory(res.category);
+        console.log(this.category);
         this.image_url = res.image_url;
       })
     }
+  }
+  getCategory(category: string) {
+    if(category === "Auto") return '1';
+    else if(category === "Business") return '2';
+    else return '3';
   }
   edit(image_url: any) {
 

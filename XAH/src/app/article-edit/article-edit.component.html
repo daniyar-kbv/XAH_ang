@@ -17,21 +17,23 @@
               <div class="form-group">
                 <label>Заголовок
                 </label>
-                <input value="{{title}}"class="form-control form-control-lg" type="text" name="userName" id="title" />
+                <input value="{{title}}" class="form-control form-control-lg" type="text" name="userName" id="title" />
               </div>
             </div>
             <div class="col-12">
               <div class="form-group">
                 <label>Текст
                 </label>
-                <textarea class="form-control form-control-lg" type="text" name="userName" id="body" [(ngModel)]="body"></textarea>
+                <textarea value="{{body}}" class="form-control form-control-lg" type="text" name="userName"
+                  id="body"></textarea>
               </div>
             </div>
             <div class="col-12">
               <div class="form-group">
                 <label>Категория
                 </label>
-                <select class="form-control form-control-lg" type="email" name="emailAddress" id="category" [(ngModel)]="category">
+                <select value="{{category}}" class="form-control form-control-lg" type="email" name="emailAddress"
+                  id="category">
                   <option value="1">Авто</option>
                   <option value="2">Бизнес</option>
                   <option value="3">Спорт</option>
@@ -41,7 +43,8 @@
             <div class="col-12">
               <form>
                 <div class="form-group">
-                  <label for="exampleFormControlFile1">Выберите изображение (не выбирайте ничего, если хотите оставить прежнее)</label>
+                  <label for="exampleFormControlFile1">Выберите изображение (не выбирайте ничего, если хотите оставить
+                    прежнее)</label>
                   <input #image_url type="file" class="form-control-file" id="exampleFormControlFile1">
                 </div>
               </form>
@@ -56,5 +59,4 @@
       </div>
     </div>
   </div>
-
 </ng-container>
