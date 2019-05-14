@@ -28,6 +28,7 @@ class ArticleCreate(generics.CreateAPIView):
     authentication_classes = (TokenAuthentication,)
     serializer_class = ArticleSerializer
 
+
     def perform_create(self, serializer):
         return serializer.save(created_by=self.request.user)
 
