@@ -6,11 +6,14 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import filters
 
 
 class CommentList(generics.ListAPIView):
     serializer_class = CommentSerializer
     lookup_field = 'article_id'
+    ordering_fields = ('date_published', )
+    filter_backends = (filters.OrderingFilter, )
 
     def get_queryset(self):
         return Comment.objects.comments_article(self.kwargs[self.lookup_field])

@@ -9,16 +9,10 @@
   <div class="collapse" id="comment-reply">
     <form class="card-body">
       <div class="form-group">
-        <textarea class="form-control from-control-lg" id="comment-reply-text" name="comment-reply" rows="4" placeholder="Пишите свой комментарий здесь"></textarea>
-      </div>
-      <div class="mb-2">
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" name="notify-reply" id="check-notify">
-          <label class="custom-control-label text-small" for="check-notify">Уведомить меня, когда кто-то ответит</label>
-        </div>
+        <textarea class="form-control from-control-lg" id="comment-reply-text" name="comment-reply" rows="4" placeholder="Пишите свой комментарий здесь" [(ngModel)]="commentBody"></textarea>
       </div>
       <div class="d-flex align-items-center">
-        <button type="submit" class="btn btn-success mr-3">Опубликовать комментарий</button>
+        <button type="submit" class="btn btn-success mr-3" (click)="createComment(commentBody)">Опубликовать комментарий</button>
         <a href="#comment-reply" class="text-small text-muted" data-toggle="collapse" aria-expanded="true" aria-controls="comment-reply">Отмена</a>
       </div>
     </form>
