@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { IArticle } from '../shared/models/article';
 import { IArticleLike } from '../shared/models/articleLike';
 import { ProviderService } from '../shared/services/provider.service';
-import {tryCatch} from 'rxjs/internal-compatibility';
 
 @Component({
   selector: 'app-post',
@@ -28,9 +27,12 @@ export class PostComponent implements OnInit {
 
   putArticleLike() {
     this.provider.putArticleLike().then(res => {
+      console.log(res)
       this.likes.push(res);
-    }).catch( res => {
+    }).catch((err) => {
+      this.provider.deleteArticleLike();
       this.likes.pop();
-    });
+      console.log(err);
+  });
   }
 }
