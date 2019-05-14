@@ -32,6 +32,7 @@ class ArticleCreate(generics.CreateAPIView):
     serializer_class = ArticleSerializer
     lookup_field = 'category_id'
 
+
     def perform_create(self, serializer):
         try:
             category = Category.objects.get(id=self.kwargs[self.lookup_field])

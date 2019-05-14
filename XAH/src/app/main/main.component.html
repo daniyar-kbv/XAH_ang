@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row mt-5 ml-1 mr-1" id="hot-news">
         <div [routerLink] = "'/post'" class="col-6 col-sm-6 col-lg-6 shadow-box-big p-0 image-in" style="background-image: url(../assets/images/magazines.jpg)">
-            <div class="d-flex align-content-between flex-wrap h-100">
+            <div class="d-flex align-items-end flex-column h-100">
                 <div class="ml-auto d-flex cat-box">
                     <div class="bg-dark w-100">
                         <p class="mt-2 mb-2 text-center cat-text">
@@ -10,7 +10,7 @@
                     </div>
                 </div>
                 <div class="mt-auto p-2 bd-highlight">
-                    <p class="m-1 text-left hot-new-text hot-new-text-white image-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                    <p class="m-1 text-left hot-new-text hot-new-text-white image-in">{{articles[0].title}}</p>
                 </div>
             </div>
         </div>
