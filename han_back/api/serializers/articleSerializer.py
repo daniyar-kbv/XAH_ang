@@ -13,7 +13,7 @@ class ArticleSerializer(serializers.Serializer):
     image_url = serializers.CharField(required=False)
     created_at = serializers.DateTimeField(required=False)
     created_by = serializers.CharField(read_only=True)
-    category = serializers.CharField()
+    category = serializers.CharField(required=False)
 
     def create(self, validated_data):
         article = Article(**validated_data)

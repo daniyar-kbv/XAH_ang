@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProviderService } from '../shared/services/provider.service';
 import { IComment } from '../shared/models/comment';
+import { ICommentLike } from '../shared/models/commentLike'
 
 @Component({
   selector: 'app-comments',
@@ -10,6 +11,7 @@ import { IComment } from '../shared/models/comment';
 export class CommentsComponent implements OnInit {
   public comments: IComment[] = [];
   public commentBody: string = '';
+  public likes: ICommentLike[] = [];
 
 
   constructor(private provider: ProviderService) { }
@@ -17,6 +19,9 @@ export class CommentsComponent implements OnInit {
   ngOnInit() {
     this.provider.getComments('1').then(res => {
       this.comments = res;
+      this.provider.getCommentLikes().then(res1 => {
+        this.likes = res1;
+      })
     })
   }
 
@@ -29,7 +34,11 @@ export class CommentsComponent implements OnInit {
   }
 
   putCommentLike() {
-    this.provider.putCommentLike();
+    this.provider.putCommentLike().then(res => {
+      this.likes.push(res);
+    }).catch(res => {
+      this.likes.pop();
+    })
   }
 
 }
