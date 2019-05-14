@@ -6,7 +6,7 @@ from datetime import datetime
 
 class Article(models.Model):
     title = models.CharField(max_length=512)
-    body = models.CharField(max_length=1024)
+    body = models.TextField()
     image_url = models.CharField(max_length=512)
     views = models.IntegerField(default=0)
     created_at = models.DateTimeField(default=datetime.now)

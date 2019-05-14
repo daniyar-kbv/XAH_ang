@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ProviderService} from '../shared/services/provider.service';
+import {IArticle} from '../shared/models/article';
 
 @Component({
   selector: 'app-main',
@@ -6,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+  public articles: IArticle[] = [];
 
-
-  constructor() { }
+  constructor(private provider: ProviderService) { }
 
   ngOnInit() {
+    this.provider.getArticlesByViews().then(res => {
+      this.articles = res;
+    })
   }
 
 }
