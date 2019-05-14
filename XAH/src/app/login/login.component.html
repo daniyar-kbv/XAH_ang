@@ -17,29 +17,36 @@
                                 <form class="text-left col-lg-8 dark-form">
                                     <div class="form-group">
                                         <label for="login-email">Имя пользователя</label>
-                                        <input class="form-control form-control-lg" type="text" name="email" id="login-email" placeholder="Введите имя пользователя" [(ngModel)]="username"/>
+                                        <input class="form-control form-control-lg" type="text" name="email"
+                                            id="login-email" placeholder="Введите имя пользователя"
+                                            [(ngModel)]="username" />
                                     </div>
                                     <div class="form-group">
                                         <label for="login-password">Пароль</label>
-                                        <input class="form-control form-control-lg" type="password" name="password" id="login-password" placeholder="Введите пароль" [(ngModel)]="password"/>
+                                        <input class="form-control form-control-lg" type="password" name="password"
+                                            id="login-password" placeholder="Введите пароль" [(ngModel)]="password" />
                                         <small>Забыли пароль? <a href="#">Сбросить</a>
                                         </small>
                                     </div>
                                     <div>
                                         <div class="custom-control custom-checkbox align-items-center">
-                                            <input type="checkbox" class="custom-control-input" value="box-1" name="box-1" checked id="check-remember">
-                                            <label class="custom-control-label text-small" for="check-remember">Запомнить меня</label>
+                                            <input type="checkbox" class="custom-control-input" value="box-1"
+                                                name="box-1" checked id="check-remember">
+                                            <label class="custom-control-label text-small"
+                                                for="check-remember">Запомнить меня</label>
                                         </div>
                                     </div>
                                     <div class="text-center mt-3">
-                                        <button type="submit" class="btn btn-lg btn-primary btn-block" (click)="login()">Войти</button>
+                                        <button type="submit" class="btn btn-lg btn-primary btn-block"
+                                            (click)="login()">Войти</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                     <div class="text-center">
-                        <span class="text-small">Нет аккаунта? <a routerLink="/registration" routerLinkActive="active">Зарегестрироваться</a>
+                        <span class="text-small">Нет аккаунта? <a routerLink="/registration"
+                                routerLinkActive="active">Зарегестрироваться</a>
                         </span>
                     </div>
                 </div>

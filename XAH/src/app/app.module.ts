@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ArticleCreateComponent } from './article-create/article-create.component';
+import { MyArticlesComponent } from './my-articles/my-articles.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ArticleCreateComponent } from './article-create/article-create.componen
     HeaderComponent,
     FooterComponent,
     ArticleCreateComponent,
+    MyArticlesComponent,
   ],
   imports: [
     NgbModule,

@@ -79,11 +79,11 @@ export class ProviderService extends MainService {
     return this.get(this.baseUrl  + 'articles/4/likes/', {});
   }
 
-  createArticle(title, body, category, imageUrl): Promise<any>{
+  createArticle(title, body, category, image_url): Promise<any>{
     return this.post(this.baseUrl + `articles/create/${category}/`, {
       title: title,
       body: body,
-      imageUrl: imageUrl
+      image_url: image_url
     })
   }
 

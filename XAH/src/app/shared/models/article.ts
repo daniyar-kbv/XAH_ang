@@ -1,5 +1,3 @@
-import {IUser} from './user';
-import {ICategory} from './category';
 
 export interface IArticle {
   id: number,
@@ -7,7 +5,7 @@ export interface IArticle {
   body: string,
   imageUrl: string,
   views: number,
-  created_at: any,
-  created_by: IUser,
-  category: ICategory
+  created_at: string,
+  created_by: string,
+  category: string
 }
