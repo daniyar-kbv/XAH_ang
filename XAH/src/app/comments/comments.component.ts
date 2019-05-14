@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProviderService } from '../shared/services/provider.service';
-import { IComment, ICommentLike } from '../shared/models/comment';
+import { IComment } from '../shared/models/comment';
+import { ICommentLike } from '../shared/models/commentLike'
 
 @Component({
   selector: 'app-comments',
