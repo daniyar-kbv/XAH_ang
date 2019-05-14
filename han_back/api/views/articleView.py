@@ -50,7 +50,10 @@ class ArticleUpdate(generics.UpdateAPIView):
         return Article.objects.get(id=self.kwargs[self.lookup_field])
 
     def perform_update(self, serializer):
-        serializer.save()
+        if self.request.user == self.get_object().created_by:
+            serializer.save()
+        else:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
 
 class ArticleDelete(generics.DestroyAPIView):
     permission_classes = (IsAuthenticated,)
@@ -60,5 +63,10 @@ class ArticleDelete(generics.DestroyAPIView):
 
     def get_object(self):
         return Article.objects.get(id=self.kwargs[self.lookup_field])
+        
     def perform_destroy(self, instance):
-        instance.delete()
+        if self.request.user == self.get_object().created_by:
+            instance.delete()
+        else:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+        
