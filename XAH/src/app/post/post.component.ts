@@ -17,4 +17,7 @@ export class PostComponent implements OnInit {
     })
   }
 
+  putLike() {
+    this.provider.putLike();
+  }
 }

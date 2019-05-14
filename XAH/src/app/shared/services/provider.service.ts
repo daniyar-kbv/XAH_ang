@@ -19,7 +19,13 @@ export class ProviderService extends MainService{
   }
 
   getComments(articleId: any): Promise<IComment[]>{
-    return this.get(this.baseUrl + `articles/${articleId}/comments/`, {})
+    return this.get(this.baseUrl + `articles/${articleId}/comments/?ordering=-date_published`, {})
+  }
+
+  createComment(body: string, articleId: any): Promise<IComment>{
+    return this.post(this.baseUrl + `articles/${articleId}/comments/create/`, {
+      body: body
+    })
   }
 
   login(username: any, password: any): Promise<IAuthResponse>{
@@ -41,7 +47,15 @@ export class ProviderService extends MainService{
     return this.post(this.baseUrl + 'logout/', {});
   }
 
+  getArticlesByViews(): Promise<IArticle[]>{
+    return this.get(this.baseUrl + 'articles/?ordering=-views', {});
+  }
+
   getArticle(): Promise<IArticle>{
-    return this.get(`http://localhost:8000/api/articles/1/`, {})
+    return this.get(`http://localhost:8000/api/articles/1/`, {});
+  }
+
+  putLike(){
+    return this.post(`http://localhost:8000/api/articles/1/likes/`, {})
   }
 }
