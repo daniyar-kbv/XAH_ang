@@ -17,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ArticleCreateComponent } from './article-create/article-create.component';
 import { MyArticlesComponent } from './my-articles/my-articles.component';
+import { ArticleEditComponent } from './article-edit/article-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MyArticlesComponent } from './my-articles/my-articles.component';
     FooterComponent,
     ArticleCreateComponent,
     MyArticlesComponent,
+    ArticleEditComponent,
   ],
   imports: [
     NgbModule,

@@ -1,0 +1,60 @@
+<ng-container *ngIf="!logged">
+  <app-login></app-login>
+</ng-container>
+
+<ng-container *ngIf="logged">
+  <div class="tab-pane fade show active pt-5 pb-5" id="general" role="tabpanel" aria-labelledby="general-tab">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col">
+          <h5>Редактировать статью</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-12 order-md-1">
+          <form class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label>Заголовок
+                </label>
+                <input value="{{title}}"class="form-control form-control-lg" type="text" name="userName" id="title" />
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <label>Текст
+                </label>
+                <textarea class="form-control form-control-lg" type="text" name="userName" id="body" [(ngModel)]="body"></textarea>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <label>Категория
+                </label>
+                <select class="form-control form-control-lg" type="email" name="emailAddress" id="category" [(ngModel)]="category">
+                  <option value="1">Авто</option>
+                  <option value="2">Бизнес</option>
+                  <option value="3">Спорт</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-12">
+              <form>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Выберите изображение (не выбирайте ничего, если хотите оставить прежнее)</label>
+                  <input #image_url type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+              </form>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <button class="btn btn-success" type="submit" (click)="create(image_url.value)">Сохранить</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ng-container>

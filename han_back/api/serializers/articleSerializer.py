@@ -25,3 +25,12 @@ class ArticleSerializer(serializers.Serializer):
         instance.body = validated_data.get('body', instance.body)
         instance.save()
         return instance
+
+class ArticleModelSerializer(serializers.ModelSerializer):
+
+    created_by: UserModelSerializer
+    category = CategorySerializer
+
+    class Meta:
+        model = Article
+        fields = '__all__'

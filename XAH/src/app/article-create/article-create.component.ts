@@ -25,6 +25,8 @@ export class ArticleCreateComponent implements OnInit {
     }
   }
   create(image_url: any) {
-    this.provider.createArticle(this.title, this.body, this.category, image_url);
+    this.provider.createArticle(this.title, this.body, this.category, image_url).then(res => {
+      console.log("Created article!");
+    });
   }
 }

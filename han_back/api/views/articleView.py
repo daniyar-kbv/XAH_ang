@@ -8,6 +8,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from api.models import Article
 from ..models.category import Category
 from api.serializers import ArticleSerializer
+from ..serializers.articleSerializer import ArticleModelSerializer
 
 class ArticleList(generics.ListAPIView):
     queryset = Article.objects.all()
@@ -29,21 +30,15 @@ class ArticleDetail(generics.RetrieveAPIView):
 class ArticleCreate(generics.CreateAPIView):
     permission_classes = (IsAuthenticated,)
     authentication_classes = (TokenAuthentication,)
-    serializer_class = ArticleSerializer
-    lookup_field = 'category_id'
-
+    serializer_class = ArticleModelSerializer
 
     def perform_create(self, serializer):
-        try:
-            category = Category.objects.get(id=self.kwargs[self.lookup_field])
-        except Category.DoesNotExist:
-            Response(status.HTTP_404_NOT_FOUND)
-        return serializer.save(created_by=self.request.user, category=category)
+        return serializer.save(created_by=self.request.user)
 
 class ArticleUpdate(generics.UpdateAPIView):
     permission_classes = (IsAuthenticated,)
     authentication_classes = (TokenAuthentication,)
-    serializer_class = ArticleSerializer
+    serializer_class = ArticleModelSerializer
     lookup_field = 'pk'
 
     def get_object(self):
@@ -63,7 +58,7 @@ class ArticleDelete(generics.DestroyAPIView):
 
     def get_object(self):
         return Article.objects.get(id=self.kwargs[self.lookup_field])
-        
+
     def perform_destroy(self, instance):
         if self.request.user == self.get_object().created_by:
             instance.delete()

@@ -14,7 +14,7 @@ urlpatterns = [
     path('', welcome),
     # Articles
     path('articles/', ArticleList.as_view()),
-    path('articles/create/<int:category_id>/', ArticleCreate.as_view()),
+    path('articles/create/', ArticleCreate.as_view()),
     path('articles/<int:pk>/', ArticleDetail.as_view()),
     path('articles/<int:pk>/update/', ArticleUpdate.as_view()),
     path('articles/<int:pk>/delete/', ArticleDelete.as_view()),

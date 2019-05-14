@@ -67,8 +67,8 @@ export class ProviderService extends MainService {
     return this.get(this.baseUrl + 'articles/?ordering=-created_at', {});
   }
 
-  getArticle(): Promise<IArticle> {
-    return this.get(this.baseUrl  + 'articles/4/', {});
+  getArticle(articleId): Promise<IArticle> {
+    return this.get(this.baseUrl  + `articles/${articleId}/`, {});
   }
 
   putArticleLike() {
@@ -80,11 +80,23 @@ export class ProviderService extends MainService {
   }
 
   createArticle(title, body, category, image_url): Promise<any>{
-    return this.post(this.baseUrl + `articles/create/${category}/`, {
+    return this.post(this.baseUrl + `articles/create/`, {
       title: title,
       body: body,
-      image_url: image_url
+      image_url: image_url,
+      category: category
     })
+  }
+  updateArticle(articleId, title, body, category, image_url): Promise<any> {
+    return this.put(this.baseUrl + `articles/${articleId}/update/`, {
+      title: title,
+      body: body,
+      image_url: image_url,
+      category: category
+    })
+  }
+  deleteArticle(articleId): Promise<any> {
+    return this.delete(this.baseUrl + `articles/${articleId}/delete/`, {});
   }
 
   putLike() {
