@@ -67,8 +67,6 @@ export class ProviderService extends MainService {
     return this.get(this.baseUrl + 'articles/?ordering=-created_at', {});
   }
 
-  getArticle(): Promise<IArticle>{
-    return this.get(`http://localhost:8000/api/articles/1/`, {});
   getArticle(): Promise<IArticle> {
     return this.get(this.baseUrl  + 'articles/3/', {});
   }
@@ -89,8 +87,10 @@ export class ProviderService extends MainService {
     })
   }
 
-  putLike(){
+  putLike() {
     return this.post(`http://localhost:8000/api/articles/1/likes/`, {})
+  }
+
   deleteArticleLike() {
     return this.delete(this.baseUrl  + 'articles/3/likes/', {});
   }
