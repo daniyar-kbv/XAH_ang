@@ -47,8 +47,8 @@ export class ProviderService extends MainService{
     return this.post(this.baseUrl + 'logout/', {});
   }
 
-  getArticles(): Promise<IArticle[]>{
-    return this.get(this.baseUrl + 'articles/', {});
+  getArticlesByViews(): Promise<IArticle[]>{
+    return this.get(this.baseUrl + 'articles/?ordering=-views', {});
   }
 
   getArticle(): Promise<IArticle>{

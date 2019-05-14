@@ -8,11 +8,16 @@ import {IArticle} from '../shared/models/article';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  public Articles: IArticle[] = [];
+  public articles: IArticle[] = [];
 
   constructor(private provider: ProviderService) { }
 
   ngOnInit() {
+    this.provider.getArticlesByViews().then(res => {
+      this.articles = res;
+    })
   }
+
+
 
 }
