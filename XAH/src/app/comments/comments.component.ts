@@ -28,4 +28,8 @@ export class CommentsComponent implements OnInit {
     })
   }
 
+  putCommentLike() {
+    this.provider.putCommentLike();
+  }
+
 }
