@@ -13,11 +13,11 @@ urlpatterns = [
     # Welcome page
     path('', welcome),
 
+    # Articles
     path('articles/', ArticleList.as_view()),
     path('articles/<int:pk>/', ArticleDetailUpdateDelete.as_view()),
 
-
-
+    # Article Likes
     #path('articles/<int:pk>/likes/', articleLike_list()),
     #path('articles/<int:pk>/likes/<int:pk>/', articleLike_delete.as_view()),
     path('articles/<int:pk>/likes/', articleLike_list.as_view()),
