@@ -5,7 +5,7 @@ from .commentSerializer import CommentSerializer
 
 
 class CommentLikeSerializer(serializers.ModelSerializer):
-    comment = CommentSerializer
+    comment_id = CommentSerializer
     owner = UserModelSerializer
 
     class Meta:

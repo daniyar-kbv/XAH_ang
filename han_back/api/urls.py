@@ -28,6 +28,6 @@ urlpatterns = [
     # Comments
     path('articles/<int:article_id>/comments/', CommentList.as_view()),
     path('articles/<int:article_id>/comments/create/', CommentCreate.as_view()),
-    path('articles/<int:article_id>/comments/<int:pk>/likes/', commentLike_list.as_view()),
+    path('comments/<int:pk>/likes/', commentLike_list.as_view()),
     path('comments/delete/<int:pk>/', CommentDelete.as_view())
 ]
