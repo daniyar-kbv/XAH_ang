@@ -39,7 +39,7 @@ class articleLike_list(APIView):
             serializer.save(user=request.user, article=article)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
-            return Response(status.HTTP_302_FOUND)
+            return Response(status.HTTP_400_BAD_REQUEST)
 
         return Response(status.HTTP_404_NOT_FOUND)
 
