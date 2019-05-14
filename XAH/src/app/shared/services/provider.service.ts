@@ -54,4 +54,8 @@ export class ProviderService extends MainService{
   getArticle(): Promise<IArticle>{
     return this.get(`http://localhost:8000/api/articles/1/`, {});
   }
+
+  putLike(){
+    return this.post(`http://localhost:8000/api/articles/1/likes/`, {})
+  }
 }
