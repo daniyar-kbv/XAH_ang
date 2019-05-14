@@ -62,4 +62,8 @@ export class ProviderService extends MainService{
   putCommentLike() {
     return this.post(`http://localhost:8000/api/comments/1/likes/`, {})
   }
+
+  getCommentLikes() {
+    return this.get(`http://localhost:8000/api/comments/1/likes/`, {})
+  }
 }
