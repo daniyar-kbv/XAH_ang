@@ -6,6 +6,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.authtoken.models import Token
+from django.contrib import auth
 
 
 class UserList(generics.ListAPIView):
@@ -25,7 +26,7 @@ def login(request):
 @api_view(['POST'])
 def logout(request):
     request.auth.delete()
-    return Response(status=status.HTTP_204_NO_CONTENT)
+    return Response(status=status.HTTP_200_OK)
 
 
 @api_view(['POST'])
