@@ -1,8 +1,5 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-# from ..models import Article
-# from ..serializers import UserModelSerializer
-# from ..serializers.categorySerializer import CategorySerializer
 from .userSerializer import UserModelSerializer
 from .categorySerializer import CategorySerializer
 from api.models import Article
@@ -15,7 +12,7 @@ class ArticleSerializer(serializers.Serializer):
     views = serializers.IntegerField(required=False)
     image_url = serializers.CharField(required=False)
     created_at = serializers.DateTimeField(required=False)
-    created_by = serializers.CharField()
+    created_by = serializers.CharField(read_only=True)
     category = serializers.CharField()
 
     def create(self, validated_data):
