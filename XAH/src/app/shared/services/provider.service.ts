@@ -51,8 +51,32 @@ export class ProviderService extends MainService{
     return this.get(this.baseUrl + 'articles/?ordering=-views', {});
   }
 
+  getArticlesAutoViews(): Promise<IArticle[]>{
+    return this.get(this.baseUrl + 'articles/?ordering=-views&?category=1', {});
+  }
+
+  getArticlesBusinessViews(): Promise<IArticle[]>{
+    return this.get(this.baseUrl + 'articles/?ordering=-views&?category=2', {});
+  }
+
+  getArticlesSportViews(): Promise<IArticle[]>{
+    return this.get(this.baseUrl + 'articles/?ordering=-views&?category=3', {});
+  }
+
+  getArticlesDate(): Promise<IArticle[]>{
+    return this.get(this.baseUrl + 'articles/?ordering=-created_at', {});
+  }
+
   getArticle(): Promise<IArticle>{
     return this.get(`http://localhost:8000/api/articles/1/`, {});
+  }
+
+  createArticle(title, body, category, imageUrl): Promise<any>{
+    return this.post(this.baseUrl + `articles/create/${category}/`, {
+      title: title,
+      body: body,
+      imageUrl: imageUrl
+    })
   }
 
   putLike(){

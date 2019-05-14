@@ -15,6 +15,7 @@ import { ProviderService } from './shared/services/provider.service';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ArticleCreateComponent } from './article-create/article-create.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FooterComponent } from './footer/footer.component';
     CommentsComponent,
     HeaderComponent,
     FooterComponent,
+    ArticleCreateComponent,
   ],
   imports: [
     NgbModule,

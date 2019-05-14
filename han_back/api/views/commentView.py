@@ -10,6 +10,7 @@ from rest_framework import filters
 
 
 class CommentList(generics.ListAPIView):
+    authentication_classes = ()
     serializer_class = CommentSerializer
     lookup_field = 'article_id'
     ordering_fields = ('date_published', )

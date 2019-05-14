@@ -1,0 +1,55 @@
+<div class="tab-pane fade show active pt-5 pb-5" id="general" role="tabpanel" aria-labelledby="general-tab">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col">
+        <h5>Account Details</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-12 order-md-1">
+        <form class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <label>Заголовок
+              </label>
+              <input class="form-control form-control-lg" type="text" name="userName" id="title" />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group">
+              <label>Текст
+              </label>
+              <textarea class="form-control form-control-lg" type="text" name="userName" id="body" ></textarea>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group">
+              <label>Категория
+              </label>
+              <select class="form-control form-control-lg" type="email" name="emailAddress" id="category">
+                <option>Авто</option>
+                <option>Бизнес</option>
+                <option>Спорт</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+            </div>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" [(ngModel)]="path">
+              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            </div>
+          </div>
+          <textarea [(ngModel)]="path"></textarea>
+          <div class="col-12">
+            <div class="form-group">
+              <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,7 @@ import { PostComponent } from './post/post.component';
 import { CategoryComponent } from './category/category.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import {ArticleCreateComponent} from './article-create/article-create.component';
 
 const routes: Routes = [
     { 
@@ -13,10 +14,11 @@ const routes: Routes = [
         pathMatch: 'full'
     },
     { path: 'main', component: MainComponent },
-    { path: 'post', component: PostComponent },
+    { path: 'post/:articleId', component: PostComponent },
     { path: 'category', component: CategoryComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'registration', component: RegistrationComponent }
+    { path: 'registration', component: RegistrationComponent },
+    { path: 'article_create', component: ArticleCreateComponent }
 ];
 
 @NgModule({
