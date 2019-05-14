@@ -22,7 +22,9 @@ export class CommentsComponent implements OnInit {
 
   createComment(body){
     this.provider.createComment(body, '1').then(res => {
-
+      this.provider.getComments('1').then(ress => {
+        this.comments = ress;
+      })
     })
   }
 

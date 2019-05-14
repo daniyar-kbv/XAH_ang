@@ -19,7 +19,7 @@ export class ProviderService extends MainService{
   }
 
   getComments(articleId: any): Promise<IComment[]>{
-    return this.get(this.baseUrl + `articles/${articleId}/comments/`, {})
+    return this.get(this.baseUrl + `articles/${articleId}/comments/?ordering=-date_published`, {})
   }
 
   createComment(body: string, articleId: any): Promise<IComment>{
@@ -47,7 +47,11 @@ export class ProviderService extends MainService{
     return this.post(this.baseUrl + 'logout/', {});
   }
 
+  getArticles(): Promise<IArticle[]>{
+    return this.get(this.baseUrl + 'articles/', {});
+  }
+
   getArticle(): Promise<IArticle>{
-    return this.get(`http://localhost:8000/api/articles/1/`, {})
+    return this.get(`http://localhost:8000/api/articles/1/`, {});
   }
 }
