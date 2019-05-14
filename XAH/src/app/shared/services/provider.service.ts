@@ -36,7 +36,7 @@ export class ProviderService extends MainService{
       email: email
     })
   }
-  
+
   logout(): Promise<any> {
     return this.post(this.baseUrl + 'logout/', {});
   }
@@ -47,5 +47,9 @@ export class ProviderService extends MainService{
 
   putLike(){
     return this.post(`http://localhost:8000/api/articles/1/likes/`, {})
+  }
+
+  putCommentLike() {
+    return this.post(`http://localhost:8000/api/comments/1/likes/`, {})
   }
 }
