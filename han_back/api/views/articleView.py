@@ -1,9 +1,12 @@
 from rest_framework import generics
+from rest_framework import filters
+from rest_framework import status
+from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
-from rest_framework import filters
 from django_filters.rest_framework import DjangoFilterBackend
 from api.models import Article
+from ..models.category import Category
 from api.serializers import ArticleSerializer
 
 class ArticleList(generics.ListAPIView):
@@ -27,9 +30,14 @@ class ArticleCreate(generics.CreateAPIView):
     permission_classes = (IsAuthenticated,)
     authentication_classes = (TokenAuthentication,)
     serializer_class = ArticleSerializer
+    lookup_field = 'category_id'
 
     def perform_create(self, serializer):
-        return serializer.save(created_by=self.request.user)
+        try:
+            category = Category.objects.get(id=self.kwargs[self.lookup_field])
+        except Category.DoesNotExist:
+            Response(status.HTTP_404_NOT_FOUND)
+        return serializer.save(created_by=self.request.user, category=category)
 
 class ArticleUpdate(generics.UpdateAPIView):
     permission_classes = (IsAuthenticated,)
