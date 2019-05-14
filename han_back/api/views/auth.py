@@ -12,6 +12,9 @@ class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserModelSerializer
 
+    def perform_create(self, serializer):
+        return serializer.save()
+
 
 @api_view(['POST'])
 def login(request):
@@ -24,8 +27,8 @@ def login(request):
 
 @api_view(['POST'])
 def logout(request):
-    request.auth.delete()
-    return Response(status=status.HTTP_204_NO_CONTENT)
+    request.user.auth_token.delete()
+    return Response(status=status.HTTP_200_OK)
 
 
 @api_view(['POST'])

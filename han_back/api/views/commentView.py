@@ -44,4 +44,7 @@ class CommentDelete(generics.DestroyAPIView):
         return Comment.objects.get(id=self.kwargs[self.lookup_field])
 
     def perform_destroy(self, instance):
-        instance.delete()
+        if self.request.user == self.get_object().created_by:
+            instance.delete()
+        else:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
