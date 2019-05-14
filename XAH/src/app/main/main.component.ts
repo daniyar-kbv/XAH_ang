@@ -20,18 +20,18 @@ export class MainComponent implements OnInit {
     this.provider.getArticlesByViews().then(res => {
       this.articles = res;
     });
-    this.provider.getArticlesAutoViews().then(res => {
-      this.articlesAuto = res;
-    });
-    this.provider.getArticlesBusinessViews().then(res => {
-      this.articlesBusiness = res;
-    });
-    this.provider.getArticlesSportViews().then(res => {
-      this.articlesSport = res;
-    });
-    this.provider.getArticlesDate().then(res => {
-      this.articlesDate = res;
-    })
+    // this.provider.getArticlesAutoViews().then(res => {
+    //   this.articlesAuto = res;
+    // });
+    // this.provider.getArticlesBusinessViews().then(res => {
+    //   this.articlesBusiness = res;
+    // });
+    // this.provider.getArticlesSportViews().then(res => {
+    //   this.articlesSport = res;
+    // });
+    // this.provider.getArticlesDate().then(res => {
+    //   this.articlesDate = res;
+    // })
   }
 
 }
