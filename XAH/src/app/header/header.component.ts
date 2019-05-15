@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProviderService } from '../shared/services/provider.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-header',

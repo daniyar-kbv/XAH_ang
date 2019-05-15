@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProviderService } from '../shared/services/provider.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-registration',
@@ -11,7 +12,7 @@ export class RegistrationComponent implements OnInit {
   public password: any='';
   public email: any='';
 
-  constructor(private provider: ProviderService) { }
+  constructor(private provider: ProviderService, private location: Location) { }
 
   ngOnInit() {
 
@@ -23,6 +24,7 @@ export class RegistrationComponent implements OnInit {
         this.username = '';
         this.password = '';
         this.email = '';
+        this.location.back();
       })
     }
   }
