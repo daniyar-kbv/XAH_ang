@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProviderService } from '../shared/services/provider.service';
 import { ActivatedRoute } from '@angular/router';
 import { IComment } from '../shared/models/comment';
-import { ICommentLike } from '../shared/models/commentLike';
+import { ICommentLike } from '../shared/models/commentLike'
 
 @Component({
   selector: 'app-comments',
@@ -11,10 +11,10 @@ import { ICommentLike } from '../shared/models/commentLike';
 })
 export class CommentsComponent implements OnInit {
   public comments: IComment[] = [];
-  public commentBody = '';
+  public commentBody: string = '';
   public likes: ICommentLike[] = [];
   public articleId: string;
-  public commentId: string;
+
 
   constructor(private provider: ProviderService, private route: ActivatedRoute) { }
 
@@ -24,29 +24,31 @@ export class CommentsComponent implements OnInit {
     this.provider.getComments(this.articleId).then(res => {
       console.log(res);
       this.comments = res;
-      this.provider.getCommentLikes(this.commentId).then(res1 => {
+      this.provider.getCommentLikes().then(res1 => {
         this.likes = res1;
-      });
-    });
+      })
+    })
   }
 
-  createComment(body) {
-    console.log('button clicked');
+  createComment(body){
+    console.log("button clicked")
     this.provider.createComment(body, this.articleId).then(res => {
       console.log(res);
       this.provider.getComments(this.articleId).then(ress => {
         console.log(ress);
         this.comments = ress;
-      });
-    });
+      })
+    }).catch( res => {
+      alert(res.message)
+    })
   }
 
   putCommentLike() {
-    this.provider.putCommentLike(this.commentId).then(res => {
+    this.provider.putCommentLike().then(res => {
       this.likes.push(res);
     }).catch(res => {
       this.likes.pop();
-    });
+    })
   }
 
   // putCommentLike() {
