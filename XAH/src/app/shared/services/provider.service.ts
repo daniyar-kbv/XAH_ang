@@ -116,18 +116,22 @@ export class ProviderService extends MainService {
   }
 
   putLike() {
-    return this.post(`http://localhost:8000/api/articles/1/likes/`, {})
+    return this.post(`http://localhost:8000/api/articles/1/likes/`, {});
   }
 
   deleteArticleLike(articleId) {
     return this.delete(this.baseUrl  + `articles/${articleId}/likes/`, {});
   }
 
-  putCommentLike() {
-    return this.post(this.baseUrl  + 'comments/1/likes/', {});
+  putCommentLike(commentId) {
+    return this.post(this.baseUrl  + `comments/${commentId}/likes/`, {});
   }
 
-  getCommentLikes() {
-    return this.get(`http://localhost:8000/api/comments/1/likes/`, {})
+  getCommentLikes(commentId) {
+    return this.get(this.baseUrl  + `comments/${commentId}/likes/`, {});
+  }
+
+  deleteCommentLike(commentId) {
+    return this.delete(this.baseUrl  + `comments/${commentId}/likes/`, {});
   }
 }
