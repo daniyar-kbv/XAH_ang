@@ -63,6 +63,18 @@ export class ProviderService extends MainService {
     return this.get(this.baseUrl + 'articles/?ordering=-views&category=3', {});
   }
 
+  getArticlesAutoDate(): Promise<IArticle[]> {
+    return this.get(this.baseUrl + 'articles/?ordering=-created_at&category=1', {});
+  }
+
+  getArticlesBusinessDate(): Promise<IArticle[]> {
+    return this.get(this.baseUrl + 'articles/?ordering=-created_at&category=2', {});
+  }
+
+  getArticlesSportDate(): Promise<IArticle[]> {
+    return this.get(this.baseUrl + 'articles/?ordering=-created_at&category=3', {});
+  }
+
   getArticlesDate(): Promise<IArticle[]> {
     return this.get(this.baseUrl + 'articles/?ordering=-created_at', {});
   }
