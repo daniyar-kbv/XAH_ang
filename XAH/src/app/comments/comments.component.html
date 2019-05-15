@@ -18,8 +18,9 @@
     </form>
   </div>
   <ul class="list-group list-group-flush list-group-comments" >
-
+    <!--<app-comment [articleIdId]='comment.id' ></app-comment>-->
     <li class="list-group-item py-4" *ngFor="let comment of comments">
+      <!--<app-comment [articleIdId]='comment.id' ></app-comment>-->
       <div class="media">
         <img alt="Image" src="assets/img/avatar-female-2.jpg" class="avatar avatar-sm" />
         <div class="media-body">
@@ -31,7 +32,7 @@
           </p>
           <div class="d-flex align-items-center">
             <div class="mr-2">
-              <button class="btn btn-sm btn-outline-primary"><i class="icon-thumbs-up" ></i>&nbsp;({{ likes.length }})</button>
+              <button class="btn btn-sm btn-outline-primary" (click)="deleteComment(comment.id)">Delete</button>
             </div>
             <small class="text-muted">{{comment.date_published.substring(0, 10)}}</small>
           </div>
