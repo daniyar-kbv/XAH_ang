@@ -18,6 +18,10 @@ export class ProviderService extends MainService {
     super(http);
   }
 
+  getComment(commentId: any): Promise<IComment> {
+    return this.get(this.baseUrl + `comments/${commentId}/`, {})
+  }
+
   getComments(articleId: any): Promise<IComment[]> {
     return this.get(this.baseUrl + `articles/${articleId}/comments/?ordering=-date_published`, {});
   }
@@ -26,6 +30,10 @@ export class ProviderService extends MainService {
     return this.post(this.baseUrl + `articles/${articleId}/comments/create/`, {
       body
     });
+  }
+
+  deleteComment(commentId): Promise<any> {
+    return this.delete(this.baseUrl + `comments/delete/${commentId}/`, {});
   }
 
   login(username: any, password: any): Promise<IAuthResponse> {

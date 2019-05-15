@@ -24,9 +24,9 @@ export class CommentsComponent implements OnInit {
     this.provider.getComments(this.articleId).then(res => {
       console.log(res);
       this.comments = res;
-      this.provider.getCommentLikes().then(res1 => {
-        this.likes = res1;
-      })
+      // this.provider.getCommentLikes().then(res1 => {
+      //   this.likes = res1;
+      // })
     })
   }
 
@@ -41,12 +41,18 @@ export class CommentsComponent implements OnInit {
     })
   }
 
-  putCommentLike() {
-    this.provider.putCommentLike().then(res => {
-      this.likes.push(res);
-    }).catch(res => {
-      this.likes.pop();
+  deleteComment(commentId){
+    this.provider.deleteComment(commentId).then(res => {
+      this.comments.find(c => c.id == commentId);
     })
   }
+
+  // putCommentLike() {
+  //   this.provider.putCommentLike().then(res => {
+  //     this.likes.push(res);
+  //   }).catch(res => {
+  //     this.likes.pop();
+  //   })
+  // }
 
 }
