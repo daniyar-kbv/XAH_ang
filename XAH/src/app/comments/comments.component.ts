@@ -20,8 +20,9 @@ export class CommentsComponent implements OnInit {
 
   ngOnInit() {
     this.articleId = this.route.snapshot.paramMap.get('articleId');
-    console.log(this.articleId);
+    // console.log(this.articleId);
     this.provider.getComments(this.articleId).then(res => {
+      console.log(res);
       this.comments = res;
       this.provider.getCommentLikes().then(res1 => {
         this.likes = res1;
