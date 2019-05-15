@@ -17,14 +17,14 @@
               <div class="form-group">
                 <label>Заголовок
                 </label>
-                <input value="{{title}}" class="form-control form-control-lg" type="text" name="userName" id="title" />
+                <input #new_title value="{{title}}" class="form-control form-control-lg" type="text" name="userName" id="title" />
               </div>
             </div>
             <div class="col-12">
               <div class="form-group">
                 <label>Текст
                 </label>
-                <textarea value="{{body}}" class="form-control form-control-lg" type="text" name="userName"
+                <textarea #new_body value="{{body}}" class="form-control form-control-lg" type="text" name="userName"
                   id="body"></textarea>
               </div>
             </div>
@@ -32,7 +32,7 @@
               <div class="form-group">
                 <label>Категория
                 </label>
-                <select value="{{category}}" class="form-control form-control-lg" type="email" name="emailAddress"
+                <select #new_category value="{{category}}" class="form-control form-control-lg" type="email" name="emailAddress"
                   id="category">
                   <option value="1">Авто</option>
                   <option value="2">Бизнес</option>
@@ -45,13 +45,13 @@
                 <div class="form-group">
                   <label for="exampleFormControlFile1">Выберите изображение (не выбирайте ничего, если хотите оставить
                     прежнее)</label>
-                  <input #image_url type="file" class="form-control-file" id="exampleFormControlFile1">
+                  <input #new_image_url type="file" class="form-control-file" id="exampleFormControlFile1">
                 </div>
               </form>
             </div>
             <div class="col-12">
               <div class="form-group">
-                <button class="btn btn-success" type="submit" (click)="create(image_url.value)">Сохранить</button>
+                <button class="btn btn-success" type="submit" (click)="edit(new_title.value, new_body.value, new_category.value, new_image_url.value)">Сохранить</button>
               </div>
             </div>
           </form>

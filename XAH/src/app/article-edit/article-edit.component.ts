@@ -31,9 +31,7 @@ export class ArticleEditComponent implements OnInit {
       this.provider.getArticle(this.articleId).then(res => {
         this.title = res.title;
         this.body = res.body;
-        console.log(res.category);
         this.category = this.getCategory(res.category);
-        console.log(this.category);
         this.image_url = res.image_url;
       })
     }
@@ -43,7 +41,10 @@ export class ArticleEditComponent implements OnInit {
     else if(category === "Business") return '2';
     else return '3';
   }
-  edit(image_url: any) {
-
+  edit(title: string, body: string, category: any, image_url: any) {
+    if(image_url != '') this.image_url = image_url; 
+    this.provider.updateArticle(this.articleId, title, body, category, this.image_url).then(res => {
+      console.log("Article updated");
+    });
   }
 }
