@@ -80,7 +80,7 @@
             </div>
             <div class="row cat-hot-news mt-5 w-100">
                 <div routerLink = '/post/{{articlesBusiness[0].id}}' class="col-lg-8 shadow-box-big p-0 image-in" [style.backgroundImage]="'url('+ articlesBusiness[0].image_url +')'">
-                    <div class="d-flex align-content-between flex-wrap h-100">
+                    <div class="d-flex align-items-end flex-column h-100 w-100">
                         <div class="mr-auto d-flex cat-box">
                             <div class="bg-dark w-100">
                                 <p class="mt-2 mb-2 text-center cat-text">{{articlesBusiness[0].category}}</p>
@@ -114,7 +114,7 @@
             </div>
             <div class="row cat-hot-news mt-5 w-100">
                 <div routerLink = '/post/{{articlesSport[0].id}}' class="col-lg-8 shadow-box-big p-0 image-in" [style.backgroundImage]="'url('+ articlesSport[0].image_url +')'">
-                    <div class="d-flex align-content-between flex-wrap h-100">
+                    <div class="d-flex align-items-end flex-column h-100 w-100">
                         <div class="mr-auto d-flex cat-box">
                             <div class="bg-dark w-100">
                                 <p class="mt-2 mb-2 text-center cat-text">{{articlesSport[0].category}}</p>
@@ -126,22 +126,22 @@
                     </div>
                 </div>
                 <div class="col-lg-4 d-flex flex-column p-0">
-                    <div class="cat-hot-small-box image-in d-flex align-items-end shadow-box-xs" [style.backgroundImage]="'url('+ articlesSport[1].image_url +')'">
+                    <div routerLink = '/post/{{articlesSport[1].id}}' class="cat-hot-small-box image-in d-flex align-items-end shadow-box-xs" [style.backgroundImage]="'url('+ articlesSport[1].image_url +')'">
                         <p class="m-2 text-left hot-new-text-white">{{articlesSport[1].title}}</p>
                     </div>
-                    <div class="cat-hot-small-box image-in d-flex align-items-end shadow-box-xs" [style.backgroundImage]="'url('+ articlesSport[2].image_url +')'">
+                    <div routerLink = '/post/{{articlesSport[2].id}}' class="cat-hot-small-box image-in d-flex align-items-end shadow-box-xs" [style.backgroundImage]="'url('+ articlesSport[2].image_url +')'">
                         <p class="m-2 text-left hot-new-text-white">{{articlesSport[2].title}}</p>
                     </div> 
-                    <div class="cat-hot-small-box image-in d-flex align-items-end shadow-box-xs" [style.backgroundImage]="'url('+ articlesSport[3].image_url +')'">
+                    <div routerLink = '/post/{{articlesSport[3].id}}' class="cat-hot-small-box image-in d-flex align-items-end shadow-box-xs" [style.backgroundImage]="'url('+ articlesSport[3].image_url +')'">
                         <p class="m-2 text-left hot-new-text-white">{{articlesSport[3].title}}</p>
                     </div> 
-                    <div class="cat-hot-small-box image-in d-flex align-items-end shadow-box-xs" [style.backgroundImage]="'url('+ articlesSport[4].image_url +')'">
+                    <div routerLink = '/post/{{articlesSport[4].id}}' class="cat-hot-small-box image-in d-flex align-items-end shadow-box-xs" [style.backgroundImage]="'url('+ articlesSport[4].image_url +')'">
                         <p class="m-2 text-left hot-new-text-white">{{articlesSport[4].title}}</p>
                     </div> 
-                    <div class="cat-hot-small-box image-in d-flex align-items-end shadow-box-xs" [style.backgroundImage]="'url('+ articlesSport[5].image_url +')'">
+                    <div routerLink = '/post/{{articlesSport[5].id}}' class="cat-hot-small-box image-in d-flex align-items-end shadow-box-xs" [style.backgroundImage]="'url('+ articlesSport[5].image_url +')'">
                         <p class="m-2 text-left hot-new-text-white">{{articlesSport[5].title}}</p>
                     </div> 
-                    <div class="cat-hot-small-box image-in d-flex align-items-end shadow-box-xs" [style.backgroundImage]="'url('+ articlesSport[6].image_url +')'">
+                    <div routerLink = '/post/{{articlesSport[6].id}}' class="cat-hot-small-box image-in d-flex align-items-end shadow-box-xs" [style.backgroundImage]="'url('+ articlesSport[6].image_url +')'">
                         <p class="m-2 text-left hot-new-text-white">{{articlesSport[6].title}}</p>
                     </div> 
                 </div> 

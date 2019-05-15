@@ -24,19 +24,19 @@ export class PostComponent implements OnInit {
     this.articleId = this.route.snapshot.paramMap.get('articleId');
     this.provider.getArticle(this.articleId).then(res => {
       this.currentArticle = res;
-      this.provider.getArticleLikes().then(res1 => {
+      this.provider.getArticleLikes(this.articleId).then(res1 => {
         this.likes = res1;
       });
     });
   }
 
   putArticleLike() {
-    this.provider.putArticleLike().then(res => {
+    this.provider.putArticleLike(this.articleId).then(res => {
       console.log(res)
       this.likes.push(res);
       this.isLiked = true;
     }).catch((err) => {
-      this.provider.deleteArticleLike();
+      this.provider.deleteArticleLike(this.articleId);
       this.likes.pop();
       console.log(err);
       this.isLiked = false;

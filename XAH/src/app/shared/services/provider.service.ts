@@ -75,12 +75,12 @@ export class ProviderService extends MainService {
     return this.get(this.baseUrl  + `articles/${articleId}/`, {});
   }
 
-  putArticleLike() {
-    return this.post(this.baseUrl  + 'articles/4/likes/', {});
+  putArticleLike(articleId) {
+    return this.post(this.baseUrl  + `articles/${articleId}/likes/`, {});
   }
 
-  getArticleLikes() {
-    return this.get(this.baseUrl  + 'articles/4/likes/', {});
+  getArticleLikes(articleId) {
+    return this.get(this.baseUrl  + `articles/${articleId}/likes/`, {});
   }
 
   createArticle(title, body, category, image_url): Promise<any>{
@@ -107,8 +107,8 @@ export class ProviderService extends MainService {
     return this.post(`http://localhost:8000/api/articles/1/likes/`, {})
   }
 
-  deleteArticleLike() {
-    return this.delete(this.baseUrl  + 'articles/4/likes/', {});
+  deleteArticleLike(articleId) {
+    return this.delete(this.baseUrl  + `articles/${articleId}/likes/`, {});
   }
 
   putCommentLike() {

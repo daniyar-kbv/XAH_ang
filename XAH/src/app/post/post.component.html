@@ -7,10 +7,9 @@
                         <div class="media-body">
                             <h1 class="display-4" *ngIf="currentArticle"><strong>{{ currentArticle.title }}</strong>
                             </h1>
-                            <span class="lead" *ngIf="currentArticle"> {{ currentArticle.body }} </span>
                             <div class="d-flex align-items-center">
                                 <span class="badge badge-secondary mr-3"
-                                    *ngIf="currentArticle">{{ currentArticle.category.name }}</span>
+                                    *ngIf="currentArticle">{{ currentArticle.category}}</span>
                                 <ul class="list-inline text-small d-inline-block">
                                     <li class="list-inline-item"><button type="button" class="btn btn-outline-secondary"
                                             (click)="putArticleLike()"><i class="icon-thumbs-up"

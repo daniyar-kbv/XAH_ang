@@ -24,18 +24,16 @@
         <img alt="Image" src="assets/img/avatar-female-2.jpg" class="avatar avatar-sm" />
         <div class="media-body">
           <div class="mb-2">
-            <span class="h6 mb-0">Kelly Fraiser</span>
-            <span class="text-muted">Making awesome products</span>
+            <span class="h6 mb-0">{{comment.created_by.username}}</span>
           </div>
           <p>
             {{comment.body}}
           </p>
           <div class="d-flex align-items-center">
             <div class="mr-2">
-              <button class="btn btn-sm btn-outline-primary">Ответить</button>
               <button class="btn btn-sm btn-outline-primary"><i class="icon-thumbs-up" ></i>&nbsp;({{ likes.length }})</button>
             </div>
-            <small class="text-muted">1st Dec 2019 • 10:15am</small>
+            <small class="text-muted">{{comment.date_published.substring(0, 10)}}</small>
           </div>
         </div>
       </div>
