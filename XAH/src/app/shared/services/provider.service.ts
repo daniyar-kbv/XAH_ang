@@ -51,19 +51,19 @@ export class ProviderService extends MainService {
     return this.get(this.baseUrl + 'articles/?ordering=-views', {});
   }
 
-  getArticlesAutoViews(): Promise<IArticle[]>{
+  getArticlesAutoViews(): Promise<IArticle[]> {
     return this.get(this.baseUrl + 'articles/?ordering=-views&?category=1', {});
   }
 
-  getArticlesBusinessViews(): Promise<IArticle[]>{
+  getArticlesBusinessViews(): Promise<IArticle[]> {
     return this.get(this.baseUrl + 'articles/?ordering=-views&?category=2', {});
   }
 
-  getArticlesSportViews(): Promise<IArticle[]>{
+  getArticlesSportViews(): Promise<IArticle[]> {
     return this.get(this.baseUrl + 'articles/?ordering=-views&?category=3', {});
   }
 
-  getArticlesDate(): Promise<IArticle[]>{
+  getArticlesDate(): Promise<IArticle[]> {
     return this.get(this.baseUrl + 'articles/?ordering=-created_at', {});
   }
 

@@ -17,7 +17,7 @@ export class CommentsComponent implements OnInit {
   constructor(private provider: ProviderService) { }
 
   ngOnInit() {
-    this.provider.getComments('1').then(res => {
+    this.provider.getComments('4').then(res => {
       this.comments = res;
       this.provider.getCommentLikes().then(res1 => {
         this.likes = res1;
@@ -26,7 +26,7 @@ export class CommentsComponent implements OnInit {
   }
 
   createComment(body){
-    this.provider.createComment(body, '1').then(res => {
+    this.provider.createComment(body, '4').then(res => {
       this.provider.getComments('1').then(ress => {
         this.comments = ress;
       })

@@ -36,54 +36,32 @@
                         <img alt="Image"
                             src="{{currentArticle.image_url}}"
                             class="img-fluid figure-img" />
-                        <figcaption class="figure-caption">Команда Казахстана во время церемонии открытия</figcaption>
                     </figure>
 
                     <article>
-                        <p>
-                            Церемония открытия Всемирных специальных <a
-                                href="https://ru.wikipedia.org/wiki/Летние_Олимпийские_игры_2020"
-                                target="_blank">Олимпийских игр</a> состоялась на стадионе Zayed Sports City в Абу-Даби.
-                            Нурсултан Назарбаев принял участие в мероприятии в ходе рабочего визита в ОАЭ.
-                        </p>
-                        <p>
-                            Первые в истории специальные игры стран Ближнего Востока и Северной Африки проходят в
-                            Абу-Даби с 14 по 21 марта. Всего в состязании примут участие около 7 500 атлетов из 170
-                            стран мира. Спортсмены будут соревноваться в 24 видах спорта.
-                        </p>
-                        <p>
-                            Казахстан на специальных ОИ представляют 67 спортсменов в 15 видах спорта, в числе которых:
-                            настольный теннис, теннис, дзюдо, плавание, пауэрлифтинг, легкая атлетика, волейбол,
-                            баскетбол, мини-футбол, гольф, бочче, гимнастика, боулинг, бег на роликах и бадминтон.
-                        </p>
+                      {{currentArticle.body}}
                     </article>
                     <app-comments></app-comments>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="card">
                         <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                              <div><i class="icon-text-document mr-1"></i> Автор</div>
+                              <span>{{currentArticle.created_by}}</span>
+                            </div>
+                          </li>
                             <li class="list-group-item">
                                 <div class="d-flex justify-content-between">
                                     <div><i class="icon-text-document mr-1"></i> Создан</div>
-                                    <span>15/03/2019</span>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="d-flex justify-content-between">
-                                    <div><i class="icon-edit mr-1"></i> Обновлен</div>
-                                    <span>17/03/2019</span>
+                                    <span>{{currentArticle.created_at}}</span>
                                 </div>
                             </li>
                             <li class="list-group-item">
                                 <div class="d-flex justify-content-between">
                                     <div><i class="icon-thumbs-up mr-1"></i> Нравится</div>
-                                    <span>214</span>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="d-flex justify-content-between">
-                                    <div><i class="icon-share mr-1"></i> Поделилось</div>
-                                    <span>52</span>
+                                    <span>{{likes.length}}</span>
                                 </div>
                             </li>
                         </ul>
