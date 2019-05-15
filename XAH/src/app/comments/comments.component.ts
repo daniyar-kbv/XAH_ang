@@ -42,7 +42,7 @@ export class CommentsComponent implements OnInit {
   }
 
   putCommentLike() {
-    this.provider.putCommentLike().then(res => {
+    this.provider.putCommentLike(this.commentId).then(res => {
       this.likes.push(res);
     }).catch(res => {
       this.likes.pop();
