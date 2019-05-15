@@ -9,6 +9,7 @@ import { ProviderService } from '../shared/services/provider.service';
 export class ArticleCreateComponent implements OnInit {
 
   private TOKEN = 'Token';
+  private IMAGE_URL = 'http://127.0.0.1:8887/articles/';
 
   public logged = false;
 
@@ -24,8 +25,9 @@ export class ArticleCreateComponent implements OnInit {
       this.logged = true;
     }
   }
-  create(image_url: any) {
-    this.provider.createArticle(this.title, this.body, this.category, image_url).then(res => {
+  create(image_url: string) {
+    let url = this.IMAGE_URL + image_url.replace(/^.*[\\\/]/, '');
+    this.provider.createArticle(this.title, this.body, this.category, url).then(res => {
       console.log("Created article!");
     });
   }

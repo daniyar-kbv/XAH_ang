@@ -1,211 +1,232 @@
 <div class="main-container">
-        <section class="bg-white space-sm">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col">
-                        <div class="media align-items-center">
-                            <div class="media-body">
-                                <h1 class="display-4" *ngIf="currentArticle"><strong>{{ currentArticle.title }}</strong></h1>
-                                <span class="lead" *ngIf="currentArticle"> {{ currentArticle.body }} </span>
-                                <div class="d-flex align-items-center">
-                                    <span class="badge badge-secondary mr-3" *ngIf="currentArticle">{{ currentArticle.category.name }}</span>
-                                    <ul class="list-inline text-small d-inline-block">
-                                      <li class="list-inline-item"><button type="button" class="btn btn-outline-secondary" (click)="putArticleLike()"><i class="icon-thumbs-up" *ngIf="isLiked==false"></i><i class="icon-thumbs-up" *ngIf="isLiked==true" style="color: red;"></i> {{ likes.length }}</button> </li>
-                                      <li class="list-inline-item"><button type="button" class="btn btn-outline-secondary"><i class="icon-message"></i></button> </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="space-sm">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-12 col-md-8 col-lg-7">
-                        <figure class="figure">
-                            <img alt="Image" src="https://esquire.kz/wp-content/uploads/2019/03/5173027c963b2b3f8c8402b0a5e27526-768x465.jpg" class="img-fluid figure-img" />
-                            <figcaption class="figure-caption">Команда Казахстана во время церемонии открытия</figcaption>
-                        </figure>
-                        
-                        <article>
-                            <p>
-                                Церемония открытия Всемирных специальных <a href="https://ru.wikipedia.org/wiki/Летние_Олимпийские_игры_2020" target="_blank">Олимпийских игр</a> состоялась на стадионе Zayed Sports City в Абу-Даби. Нурсултан Назарбаев принял участие в мероприятии в ходе рабочего визита в ОАЭ.
-                            </p>
-                            <p>
-                                Первые в истории специальные игры стран Ближнего Востока и Северной Африки проходят в Абу-Даби с 14 по 21 марта. Всего в состязании примут участие около 7 500 атлетов из 170 стран мира. Спортсмены будут соревноваться в 24 видах спорта.
-                            </p>
-                            <p>
-                                Казахстан на специальных ОИ представляют 67 спортсменов в 15 видах спорта, в числе которых: настольный теннис, теннис, дзюдо, плавание, пауэрлифтинг, легкая атлетика, волейбол, баскетбол, мини-футбол, гольф, бочче, гимнастика, боулинг, бег на роликах и бадминтон.
-                            </p>
-                        </article>
-                        <app-comments></app-comments>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="card">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <div class="d-flex justify-content-between">
-                                        <div><i class="icon-text-document mr-1"></i> Создан</div>
-                                        <span>15/03/2019</span>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="d-flex justify-content-between">
-                                        <div><i class="icon-edit mr-1"></i> Обновлен</div>
-                                        <span>17/03/2019</span>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="d-flex justify-content-between">
-                                        <div><i class="icon-thumbs-up mr-1"></i> Нравится</div>
-                                        <span>214</span>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="d-flex justify-content-between">
-                                        <div><i class="icon-share mr-1"></i> Поделилось</div>
-                                        <span>52</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- МЕСТО ДЛЯ РЕКЛАМЫ-->
-                        <div class="card">
-                                <div class="card-header d-flex justify-content-between">
-                                        <div>
-                                            <span class="h6">Ваша реклама</span>
-                                        </div>
-                                    </div>
-                            <img class="ad w-100 h-100" src="assets/img/graphic-product-kin.jpg" alt="">
-                        </div>
-                        <!-- КОНЕЦ РЕКЛАМЫ-->
-
-                        <div class="card">
-                            <div class="card-header d-flex justify-content-between">
-                                <div>
-                                    <span class="h6">Похожие статьи</span>
-                                </div>
-                                <a href="#">Посмотреть все &rsaquo;</a>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-unstyled list-spacing-sm">
-
-                                    <li>
-                                        <div class="media">
-                                            <a href="#">
-                                                <img alt="Image" src="assets/img/graphic-product-bench-thumb.jpg" class="avatar avatar-square rounded mr-3" />
-                                            </a>
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <span class="h6">Bench</span>
-                                                </a>
-                                                <span class="badge badge-secondary">Бизнес</span>
-                                                <div class="text-muted">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item">
-                                                            <small><i class="icon-heart"></i> 373</small>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <small><i class="icon-message"></i> 62</small>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+    <section class="bg-white space-sm">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col">
+                    <div class="media align-items-center">
+                        <div class="media-body">
+                            <h1 class="display-4" *ngIf="currentArticle"><strong>{{ currentArticle.title }}</strong>
+                            </h1>
+                            <span class="lead" *ngIf="currentArticle"> {{ currentArticle.body }} </span>
+                            <div class="d-flex align-items-center">
+                                <span class="badge badge-secondary mr-3"
+                                    *ngIf="currentArticle">{{ currentArticle.category.name }}</span>
+                                <ul class="list-inline text-small d-inline-block">
+                                    <li class="list-inline-item"><button type="button" class="btn btn-outline-secondary"
+                                            (click)="putArticleLike()"><i class="icon-thumbs-up"
+                                                *ngIf="isLiked==false"></i><i class="icon-thumbs-up"
+                                                *ngIf="isLiked==true" style="color: red;"></i>
+                                            {{ likes.length }}</button> </li>
+                                    <li class="list-inline-item"><button type="button"
+                                            class="btn btn-outline-secondary"><i class="icon-message"></i></button>
                                     </li>
-
-                                    <li>
-                                        <div class="media">
-                                            <a href="#">
-                                                <img alt="Image" src="assets/img/graphic-product-kin-thumb.jpg" class="avatar avatar-square rounded mr-3" />
-                                            </a>
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <span class="h6">Kin</span>
-                                                </a>
-                                                <span class="badge badge-secondary">Спорт</span>
-                                                <div class="text-muted">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item">
-                                                            <small><i class="icon-heart"></i> 84</small>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <small><i class="icon-message"></i> 21</small>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="media">
-                                            <a href="#">
-                                                <img alt="Image" src="assets/img/graphic-product-paydar-thumb.jpg" class="avatar avatar-square rounded mr-3" />
-                                            </a>
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <span class="h6">Paydar</span>
-                                                </a>
-                                                <span class="badge badge-secondary">Авто</span>
-                                                <div class="text-muted">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item">
-                                                            <small><i class="icon-heart"></i> 253</small>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <small><i class="icon-message"></i> 19</small>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="media">
-                                            <a href="#">
-                                                <img alt="Image" src="assets/img/graphic-product-pipeline-thumb.jpg" class="avatar avatar-square rounded mr-3" />
-                                            </a>
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <span class="h6">pipeline.js</span>
-                                                </a>
-                                                <span class="badge badge-secondary">Продуктивность</span>
-                                                <div class="text-muted">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item">
-                                                            <small><i class="icon-heart"></i> 84</small>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <small><i class="icon-message"></i> 25</small>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+    <section class="space-sm">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 col-md-8 col-lg-7">
+                    <figure class="figure">
+                        <img alt="Image"
+                            src="{{currentArticle.image_url}}"
+                            class="img-fluid figure-img" />
+                        <figcaption class="figure-caption">Команда Казахстана во время церемонии открытия</figcaption>
+                    </figure>
+
+                    <article>
+                        <p>
+                            Церемония открытия Всемирных специальных <a
+                                href="https://ru.wikipedia.org/wiki/Летние_Олимпийские_игры_2020"
+                                target="_blank">Олимпийских игр</a> состоялась на стадионе Zayed Sports City в Абу-Даби.
+                            Нурсултан Назарбаев принял участие в мероприятии в ходе рабочего визита в ОАЭ.
+                        </p>
+                        <p>
+                            Первые в истории специальные игры стран Ближнего Востока и Северной Африки проходят в
+                            Абу-Даби с 14 по 21 марта. Всего в состязании примут участие около 7 500 атлетов из 170
+                            стран мира. Спортсмены будут соревноваться в 24 видах спорта.
+                        </p>
+                        <p>
+                            Казахстан на специальных ОИ представляют 67 спортсменов в 15 видах спорта, в числе которых:
+                            настольный теннис, теннис, дзюдо, плавание, пауэрлифтинг, легкая атлетика, волейбол,
+                            баскетбол, мини-футбол, гольф, бочче, гимнастика, боулинг, бег на роликах и бадминтон.
+                        </p>
+                    </article>
+                    <app-comments></app-comments>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <div><i class="icon-text-document mr-1"></i> Создан</div>
+                                    <span>15/03/2019</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <div><i class="icon-edit mr-1"></i> Обновлен</div>
+                                    <span>17/03/2019</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <div><i class="icon-thumbs-up mr-1"></i> Нравится</div>
+                                    <span>214</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <div><i class="icon-share mr-1"></i> Поделилось</div>
+                                    <span>52</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- МЕСТО ДЛЯ РЕКЛАМЫ-->
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div>
+                                <span class="h6">Ваша реклама</span>
+                            </div>
+                        </div>
+                        <img class="ad w-100 h-100" src="assets/img/graphic-product-kin.jpg" alt="">
+                    </div>
+                    <!-- КОНЕЦ РЕКЛАМЫ-->
+
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div>
+                                <span class="h6">Похожие статьи</span>
+                            </div>
+                            <a href="#">Посмотреть все &rsaquo;</a>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled list-spacing-sm">
+
+                                <li>
+                                    <div class="media">
+                                        <a href="#">
+                                            <img alt="Image" src="assets/img/graphic-product-bench-thumb.jpg"
+                                                class="avatar avatar-square rounded mr-3" />
+                                        </a>
+                                        <div class="media-body">
+                                            <a href="#">
+                                                <span class="h6">Bench</span>
+                                            </a>
+                                            <span class="badge badge-secondary">Бизнес</span>
+                                            <div class="text-muted">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <small><i class="icon-heart"></i> 373</small>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <small><i class="icon-message"></i> 62</small>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="media">
+                                        <a href="#">
+                                            <img alt="Image" src="assets/img/graphic-product-kin-thumb.jpg"
+                                                class="avatar avatar-square rounded mr-3" />
+                                        </a>
+                                        <div class="media-body">
+                                            <a href="#">
+                                                <span class="h6">Kin</span>
+                                            </a>
+                                            <span class="badge badge-secondary">Спорт</span>
+                                            <div class="text-muted">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <small><i class="icon-heart"></i> 84</small>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <small><i class="icon-message"></i> 21</small>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="media">
+                                        <a href="#">
+                                            <img alt="Image" src="assets/img/graphic-product-paydar-thumb.jpg"
+                                                class="avatar avatar-square rounded mr-3" />
+                                        </a>
+                                        <div class="media-body">
+                                            <a href="#">
+                                                <span class="h6">Paydar</span>
+                                            </a>
+                                            <span class="badge badge-secondary">Авто</span>
+                                            <div class="text-muted">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <small><i class="icon-heart"></i> 253</small>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <small><i class="icon-message"></i> 19</small>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="media">
+                                        <a href="#">
+                                            <img alt="Image" src="assets/img/graphic-product-pipeline-thumb.jpg"
+                                                class="avatar avatar-square rounded mr-3" />
+                                        </a>
+                                        <div class="media-body">
+                                            <a href="#">
+                                                <span class="h6">pipeline.js</span>
+                                            </a>
+                                            <span class="badge badge-secondary">Продуктивность</span>
+                                            <div class="text-muted">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <small><i class="icon-heart"></i> 84</small>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <small><i class="icon-message"></i> 25</small>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
 
-    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.smartWizard.min.js"></script>
-    <script type="text/javascript" src="assets/js/flickity.pkgd.min.js"></script>
-    <script type="text/javascript" src="assets/js/scrollMonitor.js"></script>
-    <script type="text/javascript" src="assets/js/smooth-scroll.polyfills.js"></script>
-    <script type="text/javascript" src="assets/js/prism.js"></script>
-    <script type="text/javascript" src="assets/js/zoom.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="assets/js/theme.js"></script>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/popper.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.smartWizard.min.js"></script>
+<script type="text/javascript" src="assets/js/flickity.pkgd.min.js"></script>
+<script type="text/javascript" src="assets/js/scrollMonitor.js"></script>
+<script type="text/javascript" src="assets/js/smooth-scroll.polyfills.js"></script>
+<script type="text/javascript" src="assets/js/prism.js"></script>
+<script type="text/javascript" src="assets/js/zoom.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="assets/js/theme.js"></script>

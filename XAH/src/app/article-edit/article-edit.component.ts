@@ -10,6 +10,7 @@ import { ProviderService } from '../shared/services/provider.service';
 export class ArticleEditComponent implements OnInit {
 
   private TOKEN = 'Token';
+  private IMAGE_URL = 'http://127.0.0.1:8887/articles/';
 
   public logged = false;
 
@@ -42,7 +43,7 @@ export class ArticleEditComponent implements OnInit {
     else return '3';
   }
   edit(title: string, body: string, category: any, image_url: any) {
-    if(image_url != '') this.image_url = image_url; 
+    if(image_url != '') this.image_url = this.IMAGE_URL + image_url.replace(/^.*[\\\/]/, '');
     this.provider.updateArticle(this.articleId, title, body, category, this.image_url).then(res => {
       console.log("Article updated");
     });
