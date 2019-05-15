@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IArticle } from '../shared/models/article';
+import { IComment } from '../shared/models/comment';
 import { IArticleLike } from '../shared/models/articleLike';
 import { ActivatedRoute } from '@angular/router';
 import { ProviderService } from '../shared/services/provider.service';
