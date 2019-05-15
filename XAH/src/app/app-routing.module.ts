@@ -18,7 +18,7 @@ const routes: Routes = [
     { path: 'main', component: MainComponent },
     { path: 'post/:articleId', component: PostComponent },
     { path: 'post', component: PostComponent },
-    { path: 'category', component: CategoryComponent },
+    { path: 'category/:categoryId', component: CategoryComponent },
     { path: 'login', component: LoginComponent },
     { path: 'registration', component: RegistrationComponent },
     { path: 'article_create', component: ArticleCreateComponent },

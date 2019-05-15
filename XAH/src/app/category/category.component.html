@@ -1,57 +1,14 @@
-<div class = "main-container"> 
-  		
-    <div class="all-posts">
-      <div class="post">
-          <div class="post-img">
-              <img src="https://tengrinews.kz/userdata/news/2019/news_364155/thumb_xm/photo_273822.jpg" alt="img">
-          </div>
-          <div class="post-word">
-              <div class="post-date">
-                  <p>28.02.2019</p>
-              </div>
-              <h2>Какие поручения новому правительству дал Назарбаев: полный список</h2>
-              <p class="post-text">Появился полный текст выступления Нурсултана Назарбаева на XVIII съезде партии "Hұp Отан", сообщает Tengrinews.kz со ссылкой на пресс-службу Акорды. 
-              В ходе съезда Президент отметил, что новое время диктует новые вызовы, а мир вокруг все глубже погружается в зону перманентной турбулентности.</p>
-              <a [routerLink] = "'/post'" class="read-more">Читать далее</a>
-          </div>			
-      </div>
-      <hr id="line">	
-
-      <div class="post">
-          <div class="post-img">
-              <img src="https://images4.esquire.ru/upload/img_cache/f68/f689f88d69793cdb27f95dd362958341_ce_2999x1872x0x99_cropped_960x600.jpg" alt="img">
-          </div>
-          <div class="post-word">
-              <div class="post-date">
-                  <p>26.02.2019</p>
-              </div>
-              <h2>Трамп впервые наложил вето на решение Конгресса. Все это ради строительства стены на границе с Мексикой</h2>
-              <p class="post-text">Американский президент Дональд Трамп наложил вето на резолюцию Конгресса США об отмене введенного президентом режима чрезвычайного положения в стране, сообщает «Би-би-си». Трамп впервые воспользовался правом президентского вето с момента вступления на свой пост.
-</p>
-              <a href="" class="read-more">Читать далее</a>
-          </div>			
-      </div>
-      <hr id="line">	
-
-      <div class="post">
-          <div class="post-img">
-              <img src="https://images4.esquire.ru/upload/img_cache/c17/c17ea1acb8cd068d292f0d2b678962f8_ce_2000x1248x0x43_cropped_960x600.jpg" alt="img">
-          </div>
-          <div class="post-word">
-              <div class="post-date">
-                  <p>18.02.2019</p>
-              </div>
-              <h2>Премьер-министр Новой Зеландии получила «манифест» Брентона Тарранта за девять минут до теракта</h2>
-              <p class="post-text">Офис новозеландского премьер-министра Джасинды Ардерн получил копию «манифеста» Брентона Тарранта, обвиняемого в стрельбе в двух мечетях города Крайстчерч, за девять минут до теракта, сообщает The Guardian.</p>
-              <a href="" class="read-more">Читать далее</a>
-          </div>			
-      </div>	
-  </div>
-  <div class='right__images'>
-      <a href="">
-          <img src="https://www.liat.com/UserFiles/Image/adspecs.jpg" alt="Реклама">
-      </a>
-      <a href='' class='link'>Реклама на сайте</a>
-  </div>
+<div class='container mt-5 mb-5'>
+  <li *ngFor="let a of articles" class="row align-items-center justify-content-around mb-5">
+    <div class="col-12 col-md-6 order-md-2">
+      <img class="img-fluid rounded" src="{{a.image_url}}" />
+    </div>
+    <div class="col-12 col-md-6 col-lg-5 text-lg-center order-md-1">
+      <h3 class="h1">{{a.title}}</h3>
+      <p class="lead">
+        {{a.body.substring(0, 100)}}
+      </p>
+      <p>Compare plans and featur</p>
+    </div>
+  </li>
 </div>
-<router-outlet></router-outlet>
