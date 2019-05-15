@@ -38,6 +38,8 @@ export class CommentsComponent implements OnInit {
         console.log(ress);
         this.comments = ress;
       })
+    }).catch( res => {
+      alert(res.message)
     })
   }
 
