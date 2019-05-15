@@ -10,7 +10,12 @@ from ..models.category import Category
 from api.serializers import ArticleSerializer
 from ..serializers.articleSerializer import ArticleModelSerializer
 
+class IsStaff(IsAuthenticated):
+    def has_permission(self, request, view):
+        return request.user and request.user.is_staff
+
 class ArticleList(generics.ListAPIView):
+    authentication_classes = ()
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
     filter_backends = (filters.OrderingFilter, DjangoFilterBackend)
@@ -27,6 +32,7 @@ class ArticleListByUser(generics.ListAPIView):
         return Article.objects.filter(created_by=self.request.user)
 
 class ArticleDetail(generics.RetrieveAPIView):
+    authentication_classes = ()
     serializer_class = ArticleSerializer
     lookup_field = 'pk'
 
@@ -37,7 +43,7 @@ class ArticleDetail(generics.RetrieveAPIView):
         return article
 
 class ArticleCreate(generics.CreateAPIView):
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, IsStaff, )
     authentication_classes = (TokenAuthentication,)
     serializer_class = ArticleModelSerializer
 
@@ -45,7 +51,7 @@ class ArticleCreate(generics.CreateAPIView):
         return serializer.save(created_by=self.request.user)
 
 class ArticleUpdate(generics.UpdateAPIView):
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, IsStaff, )
     authentication_classes = (TokenAuthentication,)
     serializer_class = ArticleModelSerializer
     lookup_field = 'pk'
@@ -60,7 +66,7 @@ class ArticleUpdate(generics.UpdateAPIView):
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
 class ArticleDelete(generics.DestroyAPIView):
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, IsStaff, )
     authentication_classes = (TokenAuthentication,)
     serializer_class = ArticleSerializer
     lookup_field = 'pk'
