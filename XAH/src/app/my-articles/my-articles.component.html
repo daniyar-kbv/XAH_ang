@@ -24,7 +24,7 @@
           <td>{{a.title}}</td>
           <td>{{a.category}}</td>
           <td>{{a.views}}</td>
-          <td>{{a.created_at}}</td>
+          <td>{{a.created_at.substring(0, 10)}}</td>
           <td><a routerLink="/article_edit/{{a.id}}" routerLinkActive="active"><button type="button" class="btn btn-primary btn-lg btn-block">Update</button></a></td>
           <td><button type="button" class="btn btn-danger btn-lg btn-block" (click)="delete(a.id)">Delete</button></td>
         </tr>
