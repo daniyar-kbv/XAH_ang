@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { MainService } from './main.service';
 import { HttpClient } from '@angular/common/http';
 import { IAuthResponse } from '../models/authResponse';
-import {IArticle} from '../models/article';
-import {IComment} from '../models/comment';
-import {IUser} from '../models/user';
+import { IArticle } from '../models/article';
+import { IComment } from '../models/comment';
+import { IUser } from '../models/user';
 
 
 @Injectable({
@@ -65,6 +65,10 @@ export class ProviderService extends MainService {
 
   getArticlesDate(): Promise<IArticle[]>{
     return this.get(this.baseUrl + 'articles/?ordering=-created_at', {});
+  }
+
+  getArticlesByUser(): Promise<IArticle[]> {
+    return this.get(this.baseUrl + 'articles/my/', {});
   }
 
   getArticle(articleId): Promise<IArticle> {

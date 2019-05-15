@@ -17,6 +17,15 @@ class ArticleList(generics.ListAPIView):
     ordering_fields = ('views', 'created_at')
     filterset_fields = ('category',)
 
+class ArticleListByUser(generics.ListAPIView):
+    permission_classes = (IsAuthenticated,)
+    authentication_classes = (TokenAuthentication,)
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+
+    def get_queryset(self):
+        return Article.objects.filter(created_by=self.request.user)
+
 class ArticleDetail(generics.RetrieveAPIView):
     serializer_class = ArticleSerializer
     lookup_field = 'pk'

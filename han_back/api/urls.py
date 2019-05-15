@@ -3,7 +3,7 @@ from django.urls import path
 from .views.articleLikeViews import articleLike_list
 from .views.commentLikeView import commentLike_list
 from .views.auth import login, logout, register
-from .views.articleView import ArticleDetail, ArticleList, ArticleCreate, ArticleUpdate, ArticleDelete
+from .views.articleView import ArticleDetail, ArticleList, ArticleListByUser, ArticleCreate, ArticleUpdate, ArticleDelete
 from rest_framework_jwt.views import obtain_jwt_token
 from .views.commentView import CommentList, CommentCreate, CommentDelete
 from .views.welcomeView import welcome
@@ -15,6 +15,7 @@ urlpatterns = [
     # Articles
     path('articles/', ArticleList.as_view()),
     path('articles/create/', ArticleCreate.as_view()),
+    path('articles/my/', ArticleListByUser.as_view()),
     path('articles/<int:pk>/', ArticleDetail.as_view()),
     path('articles/<int:pk>/update/', ArticleUpdate.as_view()),
     path('articles/<int:pk>/delete/', ArticleDelete.as_view()),

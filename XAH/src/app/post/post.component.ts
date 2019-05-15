@@ -17,7 +17,7 @@ export class PostComponent implements OnInit {
   constructor(private provider: ProviderService) { }
 
   ngOnInit() {
-    this.provider.getArticle().then(res => {
+    this.provider.getArticle(1).then(res => {
       this.currentArticle = res;
       this.provider.getArticleLikes().then(res1 => {
         this.likes = res1;
