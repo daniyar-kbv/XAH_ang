@@ -52,15 +52,15 @@ export class ProviderService extends MainService {
   }
 
   getArticlesAutoViews(): Promise<IArticle[]> {
-    return this.get(this.baseUrl + 'articles/?ordering=-views&?category=1', {});
+    return this.get(this.baseUrl + 'articles/?ordering=-views&category=1', {});
   }
 
   getArticlesBusinessViews(): Promise<IArticle[]> {
-    return this.get(this.baseUrl + 'articles/?ordering=-views&?category=2', {});
+    return this.get(this.baseUrl + 'articles/?ordering=-views&category=2', {});
   }
 
   getArticlesSportViews(): Promise<IArticle[]> {
-    return this.get(this.baseUrl + 'articles/?ordering=-views&?category=3', {});
+    return this.get(this.baseUrl + 'articles/?ordering=-views&category=3', {});
   }
 
   getArticlesDate(): Promise<IArticle[]> {

@@ -21,6 +21,7 @@ export class MainComponent implements OnInit {
       this.articles = res;
     });
     this.provider.getArticlesAutoViews().then(res => {
+      console.log(res)
       this.articlesAuto = res;
     });
     this.provider.getArticlesBusinessViews().then(res => {
